@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A psychology student's research notes, fieldwork, and current curiosities.">
-  <title>Elena Vale | Psychology & Human Behaviour</title>
+  <meta name="description" content="Free psychology study notes and course guides for students by Madri Gondaliya.">
+  <title>Madri Gondaliya | Psychology Study Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
@@ -68,6 +68,13 @@
     .curriculum-intro { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 38px; }
     .curriculum-intro h2 { max-width: 560px; }
     .credit-total { color: var(--deep-sage); font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .05em; }
+    .course-guides { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 48px; }
+    .course-guide-card { display: flex; flex-direction: column; gap: 14px; min-height: 190px; padding: 24px; border: 1px solid var(--line); background: var(--paper); transition: transform .25s, border-color .25s, background .25s; }
+    .course-guide-card:hover { transform: translateY(-4px); border-color: var(--deep-sage); background: var(--yellow); }
+    .course-guide-card strong { max-width: 360px; font: 500 27px/1.08 var(--serif); letter-spacing: -.03em; }
+    .course-guide-card strong em { color: var(--deep-sage); }
+    .course-guide-card > span:last-child { margin-top: auto; color: var(--muted); font: 11px var(--mono); }
+    .course-guide-card b { color: var(--coral); font-size: 15px; }
     .curriculum-shell { display: grid; grid-template-columns: 190px 1fr; gap: 44px; align-items: start; }
     .semester-sidebar { position: sticky; top: 104px; padding: 9px; border: 1px solid var(--line); background: var(--paper); }
     .semester-label { padding: 11px 12px 14px; color: var(--muted); font: 500 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
@@ -185,6 +192,7 @@
       .curriculum { padding: 76px 0; }
       .curriculum-intro { display: block; }
       .credit-total { display: block; margin-top: 22px; }
+      .course-guides { grid-template-columns: 1fr; margin-bottom: 34px; }
       .curriculum-shell { display: block; }
       .semester-sidebar { position: static; display: flex; overflow-x: auto; margin-bottom: 30px; padding: 6px; }
       .semester-label { display: none; }
@@ -209,12 +217,12 @@
 <body>
   <header>
     <nav class="nav wrap" aria-label="Primary navigation">
-      <a class="wordmark" href="#top"><span class="mark">EV</span> Elena Vale</a>
+      <a class="wordmark" href="#top"><span class="mark">MG</span> Madri Gondaliya</a>
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
       <div class="nav-links">
-        <a href="#notes">Field notes</a>
-        <a href="#focus">Current focus</a>
-        <a href="#contact" class="nav-cta">Say hello <span aria-hidden="true">↗</span></a>
+        <a href="#courses">Course guides</a>
+        <a href="#study-tools">Study tools</a>
+        <a href="#about" class="nav-cta">About this hub <span aria-hidden="true">↗</span></a>
       </div>
     </nav>
   </header>
@@ -222,18 +230,18 @@
   <main id="top">
     <section class="hero wrap">
       <div class="hero-copy">
-        <div class="eyebrow">Psychology / Year 03 / London</div>
-        <h1>Making sense of <em>being human.</em></h1>
-        <p class="intro">I’m Elena, a psychology student interested in the quiet forces behind our choices: memory, attention, and the stories we tell ourselves.</p>
+        <div class="eyebrow">Psychology study hub / Madri Gondaliya</div>
+        <h1>Study psychology with <em>clarity.</em></h1>
+        <p class="intro">Free, student-friendly notes for understanding psychology concepts, revising course units, and finding your way through the semester.</p>
         <div class="hero-actions">
-          <a class="button" href="#notes">Explore my notes <span aria-hidden="true">↘</span></a>
-          <a class="text-link" href="#contact">Get in touch</a>
+          <a class="button" href="#courses">Open course guides <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#study-tools">See study tools</a>
         </div>
       </div>
-      <div class="hero-visual" aria-label="Portrait of Elena working in a library">
+      <div class="hero-visual" aria-label="Student study desk with books and notes">
         <div class="shape"></div>
         <div class="hero-image"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85" alt="Researcher writing notes beside books in a library" loading="eager"></div>
-        <div class="annotation"><div class="eyebrow">Currently reading</div><strong>Thinking, Fast and Slow</strong><p>Daniel Kahneman · 2011</p></div>
+        <div class="annotation"><div class="eyebrow">Made for students</div><strong>Learn at your own pace</strong><p>Free notes · Clear explanations · Course focused</p></div>
       </div>
     </section>
 
@@ -241,9 +249,13 @@
       <div class="ticker-track"><span>cognitive psychology</span><span>memory & attention</span><span>social behaviour</span><span>cognitive psychology</span><span>memory & attention</span></div>
     </div>
 
-    <section class="curriculum" id="curriculum">
+    <section class="curriculum" id="courses">
       <div class="wrap">
-        <div class="curriculum-intro"><div><div class="eyebrow">01 / Programme structure</div><h2>Six semesters of becoming curious.</h2></div><div class="credit-total">MSc Psychology &nbsp;·&nbsp; 130 total credits</div></div>
+        <div class="curriculum-intro"><div><div class="eyebrow">01 / Course guides</div><h2>Your semester, in one clear place.</h2></div><div class="credit-total">Free resources &nbsp;·&nbsp; Student-made</div></div>
+        <div class="course-guides" aria-label="Featured course guides">
+          <a class="course-guide-card" href="PSY4108.html"><span class="eyebrow">PSY4108 / Semester I</span><strong>Psychological Testing <em>& Assessment</em></strong><span>Open the complete beginner-friendly guide <b aria-hidden="true">↗</b></span></a>
+          <a class="course-guide-card" href="PSY4109.html"><span class="eyebrow">PSY4109 / Semester I</span><strong>Community Psychology <em>& Mental Health</em></strong><span>Open the complete study guide <b aria-hidden="true">↗</b></span></a>
+        </div>
         <div class="curriculum-shell">
           <aside class="semester-sidebar" aria-label="Choose a semester">
             <div class="semester-label">Select sem</div>
@@ -427,25 +439,25 @@
     </section>
     </template>
 
-    <section class="section wrap" id="notes">
-      <div class="section-head"><div><div class="eyebrow">01 / The notebook</div><h2>Ideas worth sitting with.</h2></div><p class="section-note">Small observations from lectures, labs, and the space between the two. Updated whenever something clicks.</p></div>
+    <section class="section wrap" id="study-tools">
+      <div class="section-head"><div><div class="eyebrow">02 / Study tools</div><h2>Small resources for better revision.</h2></div><p class="section-note">Use these notes to review a topic, connect ideas, and prepare your own answers without getting lost in jargon.</p></div>
       <div class="notes-grid">
-        <article class="note featured"><div class="note-top"><span class="eyebrow">Featured essay</span><span class="note-number">01</span></div><div><h3>What does it mean to remember accurately?</h3><p>A closer look at reconstructive memory, eyewitness testimony, and why confidence is such a persuasive storyteller.</p></div><div class="note-meta">8 min read &nbsp;·&nbsp; 14.09.26</div></article>
-        <article class="note"><div class="note-top"><span class="eyebrow">Lab log</span><span class="note-number">02</span></div><div><h3>The attention residue of a notification.</h3><p>Notes on task-switching and the surprisingly long shadow of a buzzing phone.</p></div><div class="note-meta">4 min read &nbsp;·&nbsp; 02.09.26</div></article>
-        <article class="note"><div class="note-top"><span class="eyebrow">In conversation</span><span class="note-number">03</span></div><div><h3>Can a room change the way we think?</h3><p>Environmental cues, embodied cognition, and the psychology of a familiar chair.</p></div><div class="note-meta">6 min read &nbsp;·&nbsp; 27.08.26</div></article>
+        <article class="note featured"><div class="note-top"><span class="eyebrow">Revision method</span><span class="note-number">01</span></div><div><h3>Turn a long unit into a clear answer.</h3><p>Start with the definition, add the main thinkers, explain one example, and finish with a limitation or ethical point.</p></div><div class="note-meta">Exam-ready structure</div></article>
+        <article class="note"><div class="note-top"><span class="eyebrow">Quick check</span><span class="note-number">02</span></div><div><h3>Test yourself before rereading.</h3><p>Close your notes and write what you remember. Then return to the guide and fill the gaps.</p></div><div class="note-meta">Active recall</div></article>
+        <article class="note"><div class="note-top"><span class="eyebrow">Study habit</span><span class="note-number">03</span></div><div><h3>Connect every concept to a situation.</h3><p>A practical example makes abstract psychology easier to understand, remember, and explain in your own words.</p></div><div class="note-meta">Concept to context</div></article>
       </div>
     </section>
 
-    <section class="study-band" id="focus">
+    <section class="study-band" id="about">
       <div class="study-layout wrap">
-        <div><div class="eyebrow">02 / Current focus</div><h2>Research is a practice of paying attention.</h2></div>
-        <div><p>This term I’m building a small literature review on the relationship between digital interruption and working memory. The question is still changing. That is part of the point.</p><div class="progress-card"><div class="progress-label"><span>Literature review</span><span id="progress-number">68%</span></div><div class="bar"><div class="bar-fill" id="progress-fill"></div></div><div class="progress-actions"><button id="minus" aria-label="Decrease progress">−</button><button id="plus" aria-label="Increase progress">+</button></div></div></div>
+        <div><div class="eyebrow">03 / About this hub</div><h2>Built by a student, for students.</h2></div>
+        <div><p>Madri Gondaliya’s psychology study hub brings course notes and revision-friendly explanations into one free space. It is here to support your learning, not replace your textbook, teacher, or proper academic sources.</p><div class="progress-card"><div class="progress-label"><span>Semester I guides available</span><span id="progress-number">2</span></div><div class="bar"><div class="bar-fill" id="progress-fill"></div></div><div class="progress-actions"><button id="minus" aria-label="Decrease guide count">−</button><button id="plus" aria-label="Increase guide count">+</button></div></div></div>
       </div>
     </section>
   </main>
 
-  <footer class="footer wrap" id="contact">
-    <div class="footer-inner"><div><div class="eyebrow">03 / Keep in touch</div><h2>Let’s compare notes.</h2><p>For research chats, thoughtful questions, or excellent book recommendations.</p></div><div class="socials"><a href="mailto:hello@example.com">Email ↗</a><a href="#top">Back to top ↑</a></div></div>
+  <footer class="footer wrap">
+    <div class="footer-inner"><div><div class="eyebrow">Madri Gondaliya / Psychology student</div><h2>Learn at your own pace.</h2><p>Free study material for clearer revision and more confident understanding.</p></div><div class="socials"><a href="#courses">Course guides ↗</a><a href="#top">Back to top ↑</a></div></div>
   </footer>
 
   <script>
