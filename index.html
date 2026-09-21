@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A psychology student's research notes, fieldwork, and current curiosities.">
+  <title>Elena Vale | Psychology & Human Behaviour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202927;
+      --muted: #6c7771;
+      --paper: #f4f5ef;
+      --cream: #fbfbf7;
+      --line: #d8ddd4;
+      --sage: #b8c6b1;
+      --deep-sage: #526c5c;
+      --coral: #c9684b;
+      --yellow: #e9d995;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --mono: "DM Mono", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 56px)); margin: 0 auto; }
+    .eyebrow { color: var(--deep-sage); font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+
+    header { border-bottom: 1px solid var(--line); background: rgba(244,245,239,.88); backdrop-filter: blur(14px); position: sticky; top: 0; z-index: 20; }
+    .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .wordmark { display: inline-flex; align-items: center; gap: 11px; font-weight: 700; letter-spacing: -.04em; }
+    .mark { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--coral); color: var(--cream); font: 600 13px var(--serif); }
+    .nav-links { display: flex; align-items: center; gap: 31px; color: var(--muted); font-size: 13px; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { border: 1px solid var(--ink); border-radius: 100px; padding: 10px 17px; color: var(--ink); }
+    .menu-toggle { display: none; border: 0; background: transparent; cursor: pointer; padding: 8px; }
+    .menu-toggle span { display: block; width: 24px; height: 1px; margin: 5px; background: var(--ink); }
+
+    .hero { min-height: 695px; padding: 74px 0 90px; display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 8%; }
+    .hero-copy { max-width: 590px; }
+    h1 { margin: 18px 0 25px; font: 500 clamp(50px, 7vw, 92px)/.98 var(--serif); letter-spacing: -.055em; }
+    h1 em { color: var(--deep-sage); }
+    .intro { max-width: 430px; margin: 0 0 34px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; }
+    .button { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--ink); border-radius: 100px; padding: 14px 19px; background: var(--ink); color: var(--cream); font-size: 13px; transition: transform .2s, background .2s; }
+    .button:hover { transform: translateY(-2px); background: var(--deep-sage); }
+    .text-link { color: var(--deep-sage); font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--deep-sage); padding-bottom: 4px; }
+    .hero-visual { position: relative; min-height: 465px; }
+    .hero-image { position: absolute; inset: 16px 28px 0 0; overflow: hidden; background: #d3d9ce; }
+    .hero-image img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(.76); }
+    .hero-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(28,40,35,.38)); }
+    .shape { position: absolute; width: 184px; height: 184px; right: -4px; top: 0; border-radius: 50%; background: var(--yellow); mix-blend-mode: multiply; }
+    .annotation { position: absolute; right: -12px; bottom: 32px; z-index: 2; width: 186px; padding: 18px 17px; background: var(--cream); border: 1px solid var(--line); box-shadow: 9px 9px 0 var(--sage); }
+    .annotation strong { display: block; margin: 6px 0; font: 500 18px/1.15 var(--serif); }
+    .annotation p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
+
+    .ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; }
+    .ticker-track { display: flex; width: max-content; padding: 14px 0; gap: 30px; color: var(--deep-sage); font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+    .ticker-track span::after { content: "✳"; margin-left: 30px; color: var(--coral); }
+
+    .curriculum { padding: 105px 0 110px; background: var(--cream); border-bottom: 1px solid var(--line); }
+    .curriculum-intro { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 38px; }
+    .curriculum-intro h2 { max-width: 560px; }
+    .credit-total { color: var(--deep-sage); font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .05em; }
+    .curriculum-shell { display: grid; grid-template-columns: 190px 1fr; gap: 44px; align-items: start; }
+    .semester-sidebar { position: sticky; top: 104px; padding: 9px; border: 1px solid var(--line); background: var(--paper); }
+    .semester-label { padding: 11px 12px 14px; color: var(--muted); font: 500 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .semester-button { position: relative; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 13px 12px; border: 0; border-radius: 0; background: transparent; color: var(--muted); cursor: pointer; text-align: left; transition: background .25s, color .25s, transform .25s; }
+    .semester-button::after { content: "↗"; opacity: 0; transform: translateX(-5px); transition: opacity .25s, transform .25s; }
+    .semester-button:hover { color: var(--ink); background: rgba(184,198,177,.35); transform: translateX(3px); }
+    .semester-button.active { background: var(--deep-sage); color: var(--cream); }
+    .semester-button.active::after { opacity: 1; transform: translateX(0); }
+    .semester-subjects { display: grid; gap: 2px; padding: 9px 8px 7px 20px; border-top: 1px solid var(--line); }
+    .semester-subjects span, .semester-subjects a { color: var(--muted); font: 10px/1.35 var(--mono); }
+    .semester-subjects span::before, .semester-subjects a::before { content: "·"; margin-right: 6px; color: var(--coral); }
+    .semester-subjects a:hover { color: var(--coral); }
+    .curriculum-panel { min-width: 0; }
+    .semester-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding-bottom: 17px; border-bottom: 1px solid var(--ink); }
+    .semester-heading h3 { margin: 0; font: 500 29px var(--serif); letter-spacing: -.03em; }
+    .semester-heading span { color: var(--muted); font: 11px var(--mono); }
+    .course-table-wrap { overflow-x: auto; }
+    .course-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .course-table th { padding: 12px 10px; color: var(--muted); font: 500 10px var(--mono); letter-spacing: .04em; text-align: left; text-transform: uppercase; }
+    .course-table td { padding: 13px 10px; border-top: 1px solid var(--line); vertical-align: top; }
+    .course-table .course-code { color: var(--deep-sage); font: 500 11px var(--mono); white-space: nowrap; }
+    .course-table .course-name a { border-bottom: 1px solid var(--sage); transition: color .2s, border-color .2s; }
+    .course-table .course-name a:hover { color: var(--coral); border-color: var(--coral); }
+    .course-table .course-name { min-width: 220px; font-weight: 600; }
+    .course-table .hours, .course-table .credits { color: var(--muted); text-align: center; white-space: nowrap; }
+    .course-group td { padding: 26px 10px 9px; border-top: 0; color: var(--coral); font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .course-table tr.course-group:first-child td { padding-top: 18px; }
+    .curriculum-panel.is-changing { animation: panelReveal .4s ease both; }
+    @keyframes panelReveal { from { opacity: .25; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .semester-empty { padding: 56px 0; color: var(--muted); font: 15px/1.7 var(--serif); }
+
+    .study-guide { padding: 110px 0; background: var(--paper); }
+    .guide-header { display: flex; justify-content: space-between; align-items: end; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid var(--line); }
+    .guide-header h2 { max-width: 690px; }
+    .guide-code { color: var(--coral); font: 500 12px var(--mono); white-space: nowrap; }
+    .guide-intro { display: grid; grid-template-columns: .8fr 1.2fr; gap: 12%; padding: 42px 0 70px; }
+    .guide-intro h3 { margin: 0; font: 500 28px/1.15 var(--serif); }
+    .guide-intro p { max-width: 610px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .guide-section { padding: 52px 0; border-top: 1px solid var(--line); }
+    .guide-section-heading { display: grid; grid-template-columns: 220px 1fr; gap: 50px; margin-bottom: 30px; }
+    .guide-section-heading h3 { margin: 0; font: 500 30px/1.1 var(--serif); letter-spacing: -.03em; }
+    .guide-section-heading .eyebrow { padding-top: 7px; }
+    .topic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 42px; margin-left: 270px; }
+    .topic h4 { margin: 0 0 8px; font-size: 16px; }
+    .topic p, .topic li { color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .topic p { margin: 0; }
+    .topic ul, .topic ol { margin: 8px 0 0; padding-left: 18px; }
+    .topic li + li { margin-top: 5px; }
+    .guide-callout { margin: 35px 0 0 270px; padding: 22px 25px; border-left: 3px solid var(--coral); background: var(--cream); }
+    .guide-callout strong { display: block; margin-bottom: 6px; font: 500 18px var(--serif); }
+    .guide-callout p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .scale-list { columns: 2; column-gap: 45px; }
+    .scale-list li { break-inside: avoid; margin-bottom: 9px; }
+    .guide-footer { margin-top: 50px; padding: 28px 0 0; border-top: 1px solid var(--ink); }
+    .guide-footer p { max-width: 700px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+    .section { padding: 110px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 44px; }
+    h2 { margin: 12px 0 0; max-width: 520px; font: 500 46px/1.06 var(--serif); letter-spacing: -.04em; }
+    .section-note { max-width: 270px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .notes-grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 18px; }
+    .note { min-height: 305px; padding: 25px; border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; transition: transform .25s, border-color .25s; }
+    .note:hover { transform: translateY(-5px); border-color: var(--deep-sage); }
+    .note.featured { background: var(--deep-sage); color: var(--cream); border-color: var(--deep-sage); }
+    .note.featured .eyebrow, .note.featured .note-meta { color: #d5e1d1; }
+    .note-top { display: flex; justify-content: space-between; align-items: center; }
+    .note-number { font: 12px var(--mono); color: var(--coral); }
+    .note h3 { max-width: 330px; margin: 20px 0 12px; font: 500 27px/1.1 var(--serif); letter-spacing: -.03em; }
+    .note p { max-width: 340px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .featured p { color: #dbe3d9; }
+    .note-meta { color: var(--muted); font: 11px var(--mono); }
+
+    .study-band { background: var(--yellow); padding: 80px 0; }
+    .study-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 13%; align-items: center; }
+    .study-layout h2 { max-width: 390px; }
+    .study-layout > p { max-width: 390px; color: #59604c; font-size: 15px; line-height: 1.7; }
+    .progress-card { margin-top: 30px; padding: 21px; border-top: 1px solid rgba(32,41,39,.35); border-bottom: 1px solid rgba(32,41,39,.35); }
+    .progress-label { display: flex; justify-content: space-between; margin-bottom: 10px; font: 11px var(--mono); text-transform: uppercase; }
+    .bar { height: 6px; background: rgba(32,41,39,.18); }
+    .bar-fill { width: 68%; height: 100%; background: var(--deep-sage); transition: width .4s; }
+    .progress-actions { display: flex; gap: 8px; margin-top: 16px; }
+    .progress-actions button { border: 1px solid var(--ink); border-radius: 50%; width: 30px; height: 30px; background: transparent; cursor: pointer; }
+    .progress-actions button:hover { background: var(--ink); color: var(--cream); }
+
+    .footer { padding: 45px 0 60px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: end; border-top: 1px solid var(--line); padding-top: 25px; }
+    .footer h2 { font-size: 32px; }
+    .footer p { color: var(--muted); font-size: 12px; }
+    .socials { display: flex; gap: 20px; color: var(--muted); font: 11px var(--mono); }
+    .socials a:hover { color: var(--coral); }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 34px, 600px); }
+      .nav { height: 66px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; left: 17px; right: 17px; top: 66px; padding: 20px; background: var(--cream); border: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 19px; }
+      .nav-links.open { display: flex; }
+      .nav-cta { padding: 0; border: 0; color: var(--deep-sage); }
+      .hero { min-height: auto; padding: 65px 0 75px; display: flex; flex-direction: column; gap: 45px; align-items: stretch; }
+      h1 { font-size: clamp(49px, 15vw, 76px); }
+      .hero-visual { min-height: 390px; }
+      .hero-image { inset: 12px 19px 0 0; }
+      .shape { width: 130px; height: 130px; }
+      .annotation { right: -3px; bottom: 22px; width: 165px; }
+      .section { padding: 76px 0; }
+      .study-guide { padding: 76px 0; }
+      .guide-header { display: block; }
+      .guide-code { display: block; margin-top: 22px; }
+      .guide-intro, .guide-section-heading { display: block; }
+      .guide-intro p { margin-top: 22px; }
+      .guide-section-heading .eyebrow { margin-bottom: 13px; }
+      .topic-grid, .guide-callout { margin-left: 0; }
+      .topic-grid { grid-template-columns: 1fr; }
+      .scale-list { columns: 1; }
+      .curriculum { padding: 76px 0; }
+      .curriculum-intro { display: block; }
+      .credit-total { display: block; margin-top: 22px; }
+      .curriculum-shell { display: block; }
+      .semester-sidebar { position: static; display: flex; overflow-x: auto; margin-bottom: 30px; padding: 6px; }
+      .semester-label { display: none; }
+      .semester-subjects { display: none; }
+      .semester-button { min-width: 112px; justify-content: center; }
+      .semester-button::after { display: none; }
+      .semester-button:hover { transform: none; }
+      .course-table { min-width: 650px; }
+      .section-head { display: block; margin-bottom: 29px; }
+      h2 { font-size: 39px; }
+      .section-note { margin-top: 20px; }
+      .notes-grid { grid-template-columns: 1fr; }
+      .note { min-height: 260px; }
+      .study-band { padding: 68px 0; }
+      .study-layout { display: block; }
+      .study-layout > p { margin-top: 25px; }
+      .footer-inner { display: block; }
+      .socials { margin-top: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav wrap" aria-label="Primary navigation">
+      <a class="wordmark" href="#top"><span class="mark">EV</span> Elena Vale</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="#notes">Field notes</a>
+        <a href="#focus">Current focus</a>
+        <a href="#contact" class="nav-cta">Say hello <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow">Psychology / Year 03 / London</div>
+        <h1>Making sense of <em>being human.</em></h1>
+        <p class="intro">I’m Elena, a psychology student interested in the quiet forces behind our choices: memory, attention, and the stories we tell ourselves.</p>
+        <div class="hero-actions">
+          <a class="button" href="#notes">Explore my notes <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Portrait of Elena working in a library">
+        <div class="shape"></div>
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=85" alt="Researcher writing notes beside books in a library" loading="eager"></div>
+        <div class="annotation"><div class="eyebrow">Currently reading</div><strong>Thinking, Fast and Slow</strong><p>Daniel Kahneman · 2011</p></div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Areas of interest">
+      <div class="ticker-track"><span>cognitive psychology</span><span>memory & attention</span><span>social behaviour</span><span>cognitive psychology</span><span>memory & attention</span></div>
+    </div>
+
+    <section class="curriculum" id="curriculum">
+      <div class="wrap">
+        <div class="curriculum-intro"><div><div class="eyebrow">01 / Programme structure</div><h2>Six semesters of becoming curious.</h2></div><div class="credit-total">MSc Psychology &nbsp;·&nbsp; 130 total credits</div></div>
+        <div class="curriculum-shell">
+          <aside class="semester-sidebar" aria-label="Choose a semester">
+            <div class="semester-label">Select sem</div>
+            <button class="semester-button active" type="button" data-semester="1" aria-pressed="true">Semester I</button>
+            <div class="semester-subjects" aria-label="Semester I subjects">
+              <span>Schools of Psychology</span>
+              <span>Cognitive Neuropsychology</span>
+              <span>Personality Theories</span>
+              <span>Developmental Psychology</span>
+              <span>Research Methodology-I</span>
+              <span>Practicum I</span>
+              <span>Statistics-I</span>
+              <a href="PSY4108.html">PSY4108 - Psychological Testing</a>
+              <a href="PSY4109.html">PSY4109 - Community Psychology</a>
+              <span>Basics of Communication</span>
+              <span>Workshop-I</span>
+              <span>French-I / German-I / Spanish-I</span>
+            </div>
+            <button class="semester-button" type="button" data-semester="2" aria-pressed="false">Semester II</button>
+            <button class="semester-button" type="button" data-semester="3" aria-pressed="false">Semester III</button>
+            <button class="semester-button" type="button" data-semester="4" aria-pressed="false">Semester IV</button>
+            <button class="semester-button" type="button" data-semester="5" aria-pressed="false">Semester V</button>
+            <button class="semester-button" type="button" data-semester="6" aria-pressed="false">Semester VI</button>
+          </aside>
+          <div class="curriculum-panel" id="curriculum-panel" aria-live="polite">
+            <div class="semester-heading"><h3>Semester I</h3><span>32 credits</span></div>
+            <div class="course-table-wrap">
+              <table class="course-table">
+                <thead><tr><th>Code</th><th>Course title</th><th>Lecture / week</th><th>Tutorial / week</th><th>Practical / week</th><th>Credits</th></tr></thead>
+                <tbody>
+                  <tr class="course-group"><td colspan="6">Core courses · 27 credits</td></tr>
+                  <tr><td class="course-code">PSY4101</td><td class="course-name">Schools of Psychology</td><td class="hours">2</td><td class="hours">1</td><td class="hours">-</td><td class="credits">3</td></tr>
+                  <tr><td class="course-code">PSY4102</td><td class="course-name">Cognitive Neuropsychology</td><td class="hours">2</td><td class="hours">1</td><td class="hours">-</td><td class="credits">3</td></tr>
+                  <tr><td class="course-code">PSY4103</td><td class="course-name">Personality Theories and Perspectives</td><td class="hours">2</td><td class="hours">1</td><td class="hours">-</td><td class="credits">3</td></tr>
+                  <tr><td class="course-code">PSY4104</td><td class="course-name">Developmental Psychology</td><td class="hours">2</td><td class="hours">1</td><td class="hours">-</td><td class="credits">3</td></tr>
+                  <tr><td class="course-code">PSY4105</td><td class="course-name">Research Methodology-I</td><td class="hours">2</td><td class="hours">1</td><td class="hours">-</td><td class="credits">3</td></tr>
+                  <tr><td class="course-code">PSY4106</td><td class="course-name">Practicum I</td><td class="hours">-</td><td class="hours">-</td><td class="hours">6</td><td class="credits">3</td></tr>
+                  <tr><td class="course-code">PSY4107</td><td class="course-name">Statistics-I</td><td class="hours">2</td><td class="hours">1</td><td class="hours">-</td><td class="credits">3</td></tr>
+                  <tr><td class="course-code">PSY4108</td><td class="course-name"><a href="PSY4108.html">Psychological Testing and Assessment</a></td><td class="hours">2</td><td class="hours">1</td><td class="hours">-</td><td class="credits">3</td></tr>
+                  <tr><td class="course-code">PSY4109</td><td class="course-name"><a href="PSY4109.html">Community Psychology and Community Mental Health</a></td><td class="hours">2</td><td class="hours">1</td><td class="hours">-</td><td class="credits">3</td></tr>
+                  <tr class="course-group"><td colspan="6">Value enhancement courses · 02 credits</td></tr>
+                  <tr><td class="course-code">CSS4151</td><td class="course-name">Basics of Communication*</td><td class="hours">1</td><td class="hours">-</td><td class="hours">-</td><td class="credits">1</td></tr>
+                  <tr><td class="course-code">PSY4153</td><td class="course-name">Workshop-I</td><td class="hours">1</td><td class="hours">-</td><td class="hours">-</td><td class="credits">1</td></tr>
+                  <tr class="course-group"><td colspan="6">Open electives · 03 credits</td></tr>
+                  <tr><td class="course-code">LAN4151</td><td class="course-name">French-I</td><td class="hours">3</td><td class="hours">-</td><td class="hours">-</td><td class="credits">3</td></tr>
+                  <tr><td class="course-code">LAN4152</td><td class="course-name">German-I</td><td class="hours">3</td><td class="hours">-</td><td class="hours">-</td><td class="credits">3</td></tr>
+                  <tr><td class="course-code">LAN4153</td><td class="course-name">Spanish-I</td><td class="hours">3</td><td class="hours">-</td><td class="hours">-</td><td class="credits">3</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The PSY4109 lesson lives on its own subject page. -->
+    <template>
+    <section class="study-guide" id="psy4109">
+      <div class="wrap">
+        <div class="guide-header">
+          <div><div class="eyebrow">PSY4109 / Semester I</div><h2>Community Psychology & Community Mental Health</h2></div>
+          <div class="guide-code">Complete beginner's guide</div>
+        </div>
+
+        <div class="guide-intro">
+          <h3>Psychology does not happen in a vacuum.</h3>
+          <p>Community psychology studies how people and their surroundings affect one another. Instead of asking only, "What is wrong with this person?", it also asks, "What is happening in this person's family, school, workplace, neighbourhood, and society?" The goal is to prevent problems, strengthen communities, and give people a real voice in decisions that affect their lives.</p>
+        </div>
+
+        <article class="guide-section">
+          <div class="guide-section-heading"><div class="eyebrow">Unit I / 01</div><h3>Introduction and historical beginnings</h3></div>
+          <div class="topic-grid">
+            <div class="topic"><h4>Why did the field emerge?</h4><p>During the 1960s, many psychologists felt that clinic-based treatment could not solve problems such as poverty, discrimination, unsafe housing, and limited access to care. Helping one person at a time mattered, but it did not change the conditions making many people unwell. Community psychology grew from this dissatisfaction and shifted attention toward prevention and social change.</p></div>
+            <div class="topic"><h4>The 1965 Swampscott Conference</h4><p>The conference in Swampscott, Massachusetts is widely treated as a founding moment. Professionals argued that psychologists should work with communities, not only wait for people to enter hospitals or clinics. Seymour Bernard Sarason and James Gordon Kelly are among the important figures connected with this early development.</p></div>
+            <div class="topic"><h4>Institutions and journals</h4><p>APA Division 27 became the Society for Community Research and Action (SCRA). Journals such as the <em>American Journal of Community Psychology</em>, <em>Journal of Community Psychology</em>, and <em>Journal of Community & Applied Social Psychology</em> help researchers share evidence and debate better ways to support communities.</p></div>
+            <div class="topic"><h4>Simple example</h4><p>If a school has rising anxiety, a clinical response might offer counselling to affected students. A community psychology response may also examine exam pressure, teacher support, bullying, family stress, transport, and school policy, then design prevention with students and staff.</p></div>
+          </div>
+        </article>
+
+        <article class="guide-section">
+          <div class="guide-section-heading"><div class="eyebrow">Unit I / 02</div><h3>Definition and scope</h3></div>
+          <div class="topic-grid">
+            <div class="topic"><h4>What is community psychology?</h4><p>It is the study of relationships between individuals and the social systems around them. It uses collaborative research and practical action to improve quality of life. A person is never reduced to a diagnosis; their strengths, relationships, culture, resources, and barriers are considered too.</p></div>
+            <div class="topic"><h4>Prevention and promotion</h4><p>Prevention tries to reduce a problem before it becomes severe. Promotion builds conditions that support wellbeing, such as safe parks, supportive parenting groups, mental health education, and welcoming schools. This is why the field often works with whole populations, not only people already in crisis.</p></div>
+            <div class="topic"><h4>Support and belonging</h4><p>Social support means practical, emotional, or informational help from other people. A sense of community is the feeling that we belong, matter to one another, and can rely on the group. Both can protect mental health and make it easier to seek help.</p></div>
+            <div class="topic"><h4>Power, justice, and action</h4><p>Community psychologists study empowerment, mental health services, policy, crisis response, disaster recovery, and program evaluation. They also address poverty, diversity, discrimination, human rights, and other conditions that create unequal opportunities for health.</p></div>
+          </div>
+          <div class="guide-callout"><strong>Key idea: person-in-context</strong><p>Behaviour makes more sense when we look at the setting around it. A student who misses class may be unmotivated, but may also be caring for a family member, facing unsafe transport, or working long hours. Good assessment begins with curiosity rather than blame.</p></div>
+        </article>
+
+        <article class="guide-section">
+          <div class="guide-section-heading"><div class="eyebrow">Unit I / 03</div><h3>Community psychology in India</h3></div>
+          <div class="topic-grid">
+            <div class="topic"><h4>Moving beyond hospital-only care</h4><p>India's community mental health story includes a gradual move away from treating hospitals as the only place for care. Community-based work tries to make support available closer to where people live, while respecting family life, local culture, and existing community resources.</p></div>
+            <div class="topic"><h4>Bhore Committee, 1946</h4><p>The committee encouraged prevention, health education, and the integration of health services with community life. Its wider importance is the idea that health systems should not wait until illness becomes serious; they should build healthier conditions from the beginning.</p></div>
+            <div class="topic"><h4>Dr. Vidya Sagar</h4><p>In the 1950s, Dr. Vidya Sagar promoted family involvement in patient treatment. Families were treated as partners who could support recovery, understand the person's daily life, and help care continue after discharge.</p></div>
+            <div class="topic"><h4>Prof. Durganand Sinha</h4><p>Prof. Durganand Sinha examined the Community Development Programme and its social effects. His work, including <em>Indian Villages in Transition</em> (1969), showed why psychological ideas need to be understood alongside social and economic change.</p></div>
+            <div class="topic"><h4>CPAI and Indian scholarship</h4><p>The Community Psychology Association of India was established in Lucknow in 1987. The <em>Indian Journal of Community Psychology</em>, launched in 2004, helped create a space for Indian research, local experiences, and culturally relevant practice.</p></div>
+          </div>
+        </article>
+
+        <article class="guide-section">
+          <div class="guide-section-heading"><div class="eyebrow">Unit I / 04</div><h3>Core values and principles</h3></div>
+          <div class="topic-grid">
+            <div class="topic"><h4>Wellness before crisis</h4><p>Prevention is preferred over waiting for a problem to become severe. Wellness includes emotional health, physical safety, relationships, purpose, and access to resources. Families and communities are part of the solution, not just the background.</p></div>
+            <div class="topic"><h4>Respect for diversity</h4><p>People differ in language, culture, gender, ability, religion, class, age, and life experience. A helpful intervention does not assume that one definition of a good life fits everyone. It listens first and adapts respectfully.</p></div>
+            <div class="topic"><h4>Participation and empowerment</h4><p>People affected by an issue should help define it and decide what happens next. Empowerment means increasing voice, skills, access, and control rather than making people dependent on professionals.</p></div>
+            <div class="topic"><h4>Evidence and collaboration</h4><p>Community work should be empirically grounded: decisions are informed by careful evidence and evaluation. At the same time, psychologists collaborate with residents, teachers, health workers, social workers, policymakers, and local leaders.</p></div>
+          </div>
+        </article>
+
+        <article class="guide-section">
+          <div class="guide-section-heading"><div class="eyebrow">Unit I / 05</div><h3>The role of a community psychologist</h3></div>
+          <div class="topic-grid">
+            <div class="topic"><h4>Many roles, one purpose</h4><p>A community psychologist may be a researcher and evaluator, consultant, program developer, community organiser, policy advocate, educator or trainer, change agent, and collaborator. The role changes according to what the community needs.</p></div>
+            <div class="topic"><h4>What makes the role different?</h4><p>The psychologist is not always the person with the final answer. Their job may be to bring people together, make evidence understandable, identify strengths, question unfair systems, develop a practical programme, and check whether it is actually helping.</p></div>
+            <div class="topic"><h4>Example in practice</h4><p>For a youth substance-use project, the psychologist might interview young people, map local services, train peer educators, advise a school, help advocate for policy change, and evaluate outcomes with the community.</p></div>
+          </div>
+        </article>
+
+        <article class="guide-section">
+          <div class="guide-section-heading"><div class="eyebrow">Unit I / 06</div><h3>Theoretical models and approaches</h3></div>
+          <div class="topic-grid">
+            <div class="topic"><h4>Ecological model</h4><p>People are influenced by nested systems. The <strong>microsystem</strong> includes family and friends; an organisation includes schools or workplaces; a locality includes neighbourhoods; and the macrosystem includes laws, culture, economics, and social values. Bronfenbrenner and Kelly helped shape this way of thinking.</p></div>
+            <div class="topic"><h4>Public health and prevention model</h4><p><strong>Primary prevention</strong> acts before a problem begins, such as a life-skills programme. <strong>Secondary prevention</strong> finds and responds to early signs, such as screening. <strong>Tertiary prevention</strong> reduces harm and supports recovery after a problem is established.</p></div>
+            <div class="topic"><h4>Empowerment model</h4><p>This model asks who has power, who is left out, and how decision-making can be shared. The professional moves from expert to collaborator. People gain information, confidence, skills, connections, and influence over their own conditions.</p></div>
+            <div class="topic"><h4>Sense of community model</h4><p>McMillan and Chavis describe belonging through membership, influence, fulfilment of needs, and emotional connection. Sarason described sense of community as the feeling that one belongs to a dependable network. Strong belonging can support resilience and participation.</p></div>
+            <div class="topic"><h4>Social action and social change</h4><p>This approach looks at structural causes such as poverty, discrimination, exclusion, and unequal access. It does not blame individuals for conditions created by systems; it supports collective action to make those systems fairer.</p></div>
+            <div class="topic"><h4>Participatory action research</h4><p>In PAR, community members are co-researchers. Together they identify a problem, collect and interpret information, take action, and review what happened. Research becomes a cycle of learning and change rather than something done to people from outside.</p></div>
+            <div class="topic"><h4>Person-environment fit</h4><p>Kelly's ecological diversity approach asks whether a person's needs, abilities, and identity fit the opportunities and demands of their environment. A better match may come from changing the setting, not forcing the person to change alone.</p></div>
+          </div>
+        </article>
+
+        <article class="guide-section">
+          <div class="guide-section-heading"><div class="eyebrow">Unit II / 01</div><h3>Psychological tests and test creation</h3></div>
+          <div class="topic-grid">
+            <div class="topic"><h4>What is a psychological test?</h4><p>It is a standardized instrument used to measure a mental attribute or pattern of behaviour, such as intelligence, personality, attitudes, wellbeing, or social support. Standardized means that instructions, scoring, and interpretation follow a consistent process. Kaplan and Saccuzzo and the APA emphasise this systematic nature.</p></div>
+            <div class="topic"><h4>Common classifications</h4><ul><li><strong>Individual or group:</strong> one person at a time or many people together.</li><li><strong>Objective or subjective:</strong> fixed scoring or professional judgement.</li><li><strong>Power or speed:</strong> enough time to show ability or strict time pressure.</li><li><strong>Verbal, non-verbal, or performance:</strong> language, symbols, or practical tasks.</li></ul></div>
+            <div class="topic"><h4>What makes a good test?</h4><p>It should be objective, reliable, valid, based on suitable norms, and practical to use. <strong>Reliability</strong> means consistency. <strong>Validity</strong> means the test really measures what it claims. <strong>Norms</strong> help compare a score with an appropriate reference group.</p></div>
+            <div class="topic"><h4>Steps in test construction</h4><ol><li>Define the construct and purpose.</li><li>Choose content and item formats.</li><li>Write a broad draft pool of items.</li><li>Try out the test and study difficulty and discrimination.</li><li>Establish reliability and validity.</li><li>Prepare the final test, norms, and manual.</li></ol></div>
+            <div class="topic"><h4>Three construction strategies</h4><p><strong>Deductive</strong> construction starts with a theory. <strong>Inductive</strong> construction builds from patterns found across items or observations. <strong>Empirical</strong> construction keeps items that statistically distinguish relevant groups or outcomes. In practice, a strong test may combine approaches.</p></div>
+          </div>
+          <div class="guide-callout"><strong>Beginner's check</strong><p>A test can be consistent without being accurate. A broken weighing scale that always shows five kilograms too much is reliable, but it is not valid. Good psychological measurement needs both consistency and accuracy.</p></div>
+        </article>
+
+        <article class="guide-section">
+          <div class="guide-section-heading"><div class="eyebrow">Unit II / 02</div><h3>Community-centred tests and scales</h3></div>
+          <div class="topic-grid">
+            <div class="topic"><h4>Sense of community</h4><ul class="scale-list"><li>Sense of Community Index (SCI / SCI-2)</li><li>Brief Sense of Community Scale (BSCS)</li><li>Psychological Sense of Community Scale (PSCS)</li><li>Neighborhood Sense of Community Scale (NSCS)</li></ul></div>
+            <div class="topic"><h4>Empowerment and control</h4><ul class="scale-list"><li>Sociopolitical Control Scale (SPCS)</li><li>Psychological Empowerment Scale (PES)</li><li>Resident Empowerment Scale</li></ul></div>
+            <div class="topic"><h4>Social support and cohesion</h4><ul class="scale-list"><li>Multidimensional Scale of Perceived Social Support (MSPSS)</li><li>Social Provisions Scale (SPS)</li><li>Interpersonal Support Evaluation List (ISEL)</li><li>Neighborhood Cohesion Instrument (NCI)</li><li>Collective Efficacy Scale</li></ul></div>
+            <div class="topic"><h4>Participation and engagement</h4><ul class="scale-list"><li>Citizen Participation Scale</li><li>Community Involvement Questionnaire (CIQ)</li><li>Civic Engagement Scale (CES)</li></ul></div>
+            <div class="topic"><h4>Wellbeing and resilience</h4><ul class="scale-list"><li>WHOQOL-BREF</li><li>Satisfaction With Life Scale (SWLS)</li><li>Personal Wellbeing Index (PWI)</li><li>Connor-Davidson Resilience Scale (CD-RISC)</li><li>Community Resilience Scale (CRS)</li></ul></div>
+            <div class="topic"><h4>How to use a scale responsibly</h4><p>A questionnaire is not a diagnosis by itself. Check permission, language, cultural fit, scoring rules, privacy, and whether the measure was validated for the population. Use scores to start a conversation and guide action, not to label people carelessly.</p></div>
+          </div>
+        </article>
+
+        <article class="guide-section">
+          <div class="guide-section-heading"><div class="eyebrow">Global perspectives</div><h3>International examples and case studies</h3></div>
+          <div class="topic-grid">
+            <div class="topic"><h4>Australia and New Zealand</h4><p>Community psychology increasingly considers Indigenous knowledge, cultural identity, colonisation, and decolonial practice. This means questioning whose knowledge counts and making space for community-defined healing and leadership.</p></div>
+            <div class="topic"><h4>Latin America and Sub-Saharan Africa</h4><p>Work in these regions often connects mental health with political history, poverty, community organising, anti-oppression, and social change. Psychological support may be linked with collective action and rights-based development.</p></div>
+            <div class="topic"><h4>UK Unemployment PAR Project</h4><p>Fryer and Fagan's 2003 project used a critical lens to study unemployment and mental health. Its lesson is that distress is not only an individual weakness; loss of income, identity, routine, status, and opportunity can all matter.</p></div>
+            <div class="topic"><h4>European labour-discrimination network</h4><p>García-Ramírez and colleagues (2009) examined immigrant labour rights across three countries. The project shows how collaboration across settings can make discrimination visible and support fairer employment systems.</p></div>
+          </div>
+        </article>
+
+        <article class="guide-section">
+          <div class="guide-section-heading"><div class="eyebrow">Indian case study</div><h3>Atmiyata: care that starts in the community</h3></div>
+          <div class="topic-grid">
+            <div class="topic"><h4>What is Atmiyata?</h4><p>Atmiyata is a community-led, evidence-based mental health intervention in rural India that has been recognised by the World Health Organization. It aims to make basic mental health support available through trusted local people rather than relying only on specialists or distant hospitals.</p></div>
+            <div class="topic"><h4>Task-shifting</h4><p>Task-shifting means training suitable community members to provide selected forms of support traditionally associated with specialists. Atmiyata trains volunteers called Champions and Mitras to notice common mental health concerns, offer basic counselling, and connect people to further care when needed.</p></div>
+            <div class="topic"><h4>Connecting levels of care</h4><p>The intervention links primary care, secondary mental health care, and social support. Digital awareness tools help spread information, reduce stigma, and guide people towards the right level of help. The system is stronger because the levels communicate rather than work in isolation.</p></div>
+            <div class="topic"><h4>Why it matters</h4><p>Atmiyata demonstrates several community psychology principles at once: prevention, empowerment, collaboration, cultural fit, accessibility, and evaluation. It also shows that technology works best when it supports human relationships already trusted in the community.</p></div>
+          </div>
+          <div class="guide-callout"><strong>Exam-ready summary</strong><p>Community psychology connects mental health with context, prevention, participation, power, and social justice. A community psychologist studies systems, works with people as partners, uses evidence responsibly, and helps communities create conditions in which wellbeing is possible.</p></div>
+        </article>
+
+        <div class="guide-footer"><div class="eyebrow">Study prompt</div><p>When reading any community mental health problem, ask four questions: Who is affected? What social conditions shape the problem? Who has the power to change those conditions? How can the people most affected participate in the solution?</p></div>
+      </div>
+    </section>
+    </template>
+
+    <section class="section wrap" id="notes">
+      <div class="section-head"><div><div class="eyebrow">01 / The notebook</div><h2>Ideas worth sitting with.</h2></div><p class="section-note">Small observations from lectures, labs, and the space between the two. Updated whenever something clicks.</p></div>
+      <div class="notes-grid">
+        <article class="note featured"><div class="note-top"><span class="eyebrow">Featured essay</span><span class="note-number">01</span></div><div><h3>What does it mean to remember accurately?</h3><p>A closer look at reconstructive memory, eyewitness testimony, and why confidence is such a persuasive storyteller.</p></div><div class="note-meta">8 min read &nbsp;·&nbsp; 14.09.26</div></article>
+        <article class="note"><div class="note-top"><span class="eyebrow">Lab log</span><span class="note-number">02</span></div><div><h3>The attention residue of a notification.</h3><p>Notes on task-switching and the surprisingly long shadow of a buzzing phone.</p></div><div class="note-meta">4 min read &nbsp;·&nbsp; 02.09.26</div></article>
+        <article class="note"><div class="note-top"><span class="eyebrow">In conversation</span><span class="note-number">03</span></div><div><h3>Can a room change the way we think?</h3><p>Environmental cues, embodied cognition, and the psychology of a familiar chair.</p></div><div class="note-meta">6 min read &nbsp;·&nbsp; 27.08.26</div></article>
+      </div>
+    </section>
+
+    <section class="study-band" id="focus">
+      <div class="study-layout wrap">
+        <div><div class="eyebrow">02 / Current focus</div><h2>Research is a practice of paying attention.</h2></div>
+        <div><p>This term I’m building a small literature review on the relationship between digital interruption and working memory. The question is still changing. That is part of the point.</p><div class="progress-card"><div class="progress-label"><span>Literature review</span><span id="progress-number">68%</span></div><div class="bar"><div class="bar-fill" id="progress-fill"></div></div><div class="progress-actions"><button id="minus" aria-label="Decrease progress">−</button><button id="plus" aria-label="Increase progress">+</button></div></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap" id="contact">
+    <div class="footer-inner"><div><div class="eyebrow">03 / Keep in touch</div><h2>Let’s compare notes.</h2><p>For research chats, thoughtful questions, or excellent book recommendations.</p></div><div class="socials"><a href="mailto:hello@example.com">Email ↗</a><a href="#top">Back to top ↑</a></div></div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const semesterButtons = document.querySelectorAll('.semester-button');
+    const semesterSubjects = document.querySelector('.semester-subjects');
+    const curriculumPanel = document.querySelector('#curriculum-panel');
+    const semesterOneMarkup = curriculumPanel.innerHTML;
+    semesterButtons.forEach(button => button.addEventListener('click', () => {
+      const semester = button.dataset.semester;
+      semesterButtons.forEach(item => {
+        const selected = item === button;
+        item.classList.toggle('active', selected);
+        item.setAttribute('aria-pressed', selected);
+      });
+      semesterSubjects.hidden = semester !== '1';
+      curriculumPanel.classList.remove('is-changing');
+      void curriculumPanel.offsetWidth;
+      curriculumPanel.innerHTML = semester === '1'
+        ? semesterOneMarkup
+        : `<div class="semester-heading"><h3>Semester ${semester}</h3><span>Programme structure</span></div><p class="semester-empty">The course list for this semester will be added here soon.</p>`;
+      curriculumPanel.classList.add('is-changing');
+    }));
+
+    let progress = 68;
+    const progressNumber = document.querySelector('#progress-number');
+    const progressFill = document.querySelector('#progress-fill');
+    function updateProgress(amount) {
+      progress = Math.max(0, Math.min(100, progress + amount));
+      progressNumber.textContent = progress + '%';
+      progressFill.style.width = progress + '%';
+    }
+    document.querySelector('#minus').addEventListener('click', () => updateProgress(-5));
+    document.querySelector('#plus').addEventListener('click', () => updateProgress(5));
+  </script>
+</body>
+</html>

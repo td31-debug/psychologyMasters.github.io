@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fully detailed study guide for PSY4108 Psychological Testing and Assessment.">
+  <title>PSY4108 | Psychological Testing & Assessment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#202927; --muted:#6c7771; --paper:#f4f5ef; --cream:#fbfbf7; --line:#d8ddd4; --sage:#b8c6b1; --deep-sage:#526c5c; --coral:#c9684b; --yellow:#e9d995; --serif:"Playfair Display",Georgia,serif; --sans:"DM Sans",Arial,sans-serif; --mono:"DM Mono",monospace; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1180px,calc(100% - 56px)); margin:0 auto; }
+    .eyebrow { color:var(--deep-sage); font:500 11px var(--mono); letter-spacing:.08em; text-transform:uppercase; }
+    header { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--line); background:rgba(244,245,239,.9); backdrop-filter:blur(14px); }
+    .nav { height:76px; display:flex; align-items:center; justify-content:space-between; }
+    .wordmark { display:inline-flex; align-items:center; gap:11px; font-weight:700; letter-spacing:-.04em; }
+    .mark { display:grid; place-items:center; width:30px; height:30px; border-radius:50%; background:var(--coral); color:var(--cream); font:600 13px var(--serif); }
+    .back-link { color:var(--deep-sage); font:500 11px var(--mono); text-transform:uppercase; letter-spacing:.06em; }
+    .back-link:hover { color:var(--coral); }
+    .subject-hero { padding:96px 0 78px; background:var(--cream); border-bottom:1px solid var(--line); }
+    .subject-hero h1 { max-width:850px; margin:18px 0 24px; font:500 clamp(48px,7vw,90px)/.98 var(--serif); letter-spacing:-.055em; }
+    .subject-hero h1 em { color:var(--deep-sage); }
+    .subject-hero p { max-width:650px; margin:0; color:var(--muted); font-size:16px; line-height:1.8; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:34px; }
+    .hero-meta span { padding:9px 12px; border:1px solid var(--line); color:var(--deep-sage); font:500 10px var(--mono); text-transform:uppercase; }
+    .guide { padding:76px 0 110px; }
+    .guide-intro { display:grid; grid-template-columns:.8fr 1.2fr; gap:12%; padding-bottom:70px; }
+    .guide-intro h2 { margin:0; font:500 30px/1.15 var(--serif); }
+    .guide-intro p { max-width:650px; margin:0; color:var(--muted); font-size:15px; line-height:1.8; }
+    .guide-section { padding:52px 0; border-top:1px solid var(--line); }
+    .guide-section-heading { display:grid; grid-template-columns:220px 1fr; gap:50px; margin-bottom:30px; }
+    .guide-section-heading .eyebrow { padding-top:7px; }
+    .guide-section-heading h2 { margin:0; font:500 30px/1.1 var(--serif); letter-spacing:-.03em; }
+    .topic-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px 42px; margin-left:270px; }
+    .topic h3 { margin:0 0 8px; font-size:16px; }
+    .topic p, .topic li { color:var(--muted); font-size:13px; line-height:1.8; }
+    .topic p { margin:0; }
+    .topic ul, .topic ol { margin:8px 0 0; padding-left:19px; }
+    .topic li + li { margin-top:7px; }
+    .callout { margin:35px 0 0 270px; padding:22px 25px; border-left:3px solid var(--coral); background:var(--cream); }
+    .callout strong { display:block; margin-bottom:6px; font:500 18px var(--serif); }
+    .callout p { margin:0; color:var(--muted); font-size:13px; line-height:1.8; }
+    .timeline { display:grid; gap:14px; margin-left:270px; }
+    .timeline-item { display:grid; grid-template-columns:145px 1fr; gap:22px; padding:18px 0; border-bottom:1px solid var(--line); }
+    .timeline-item strong { color:var(--coral); font:500 12px var(--mono); }
+    .timeline-item h3 { margin:0 0 5px; font-size:15px; }
+    .timeline-item p { margin:0; color:var(--muted); font-size:13px; line-height:1.75; }
+    .formula { display:inline-block; margin:10px 0; padding:11px 14px; background:var(--yellow); color:var(--ink); font:500 14px var(--mono); }
+    .memory { padding:17px 20px; background:var(--yellow); color:#59604c; font-size:13px; line-height:1.8; }
+    .memory strong { color:var(--ink); }
+    .footer-note { margin-top:50px; padding:28px 0 0; border-top:1px solid var(--ink); }
+    .footer-note p { max-width:720px; color:var(--muted); font-size:13px; line-height:1.8; }
+    .extended-notes { margin-top:72px; padding-top:58px; border-top:1px solid var(--ink); }
+    .extended-notes-intro { max-width:720px; margin-bottom:38px; }
+    .extended-notes-intro h2 { margin:12px 0 14px; font:500 40px/1.08 var(--serif); letter-spacing:-.04em; }
+    .extended-notes-intro p { margin:0; color:var(--muted); font-size:14px; line-height:1.8; }
+    .extended-block { display:grid; grid-template-columns:220px 1fr; gap:50px; padding:34px 0; border-top:1px solid var(--line); }
+    .extended-block h3 { margin:0; font:500 24px/1.15 var(--serif); }
+    .extended-content { max-width:760px; }
+    .extended-content h4 { margin:0 0 7px; font-size:15px; }
+    .extended-content p, .extended-content li { color:var(--muted); font-size:13px; line-height:1.85; }
+    .extended-content p { margin:0 0 16px; }
+    .extended-content ul, .extended-content ol { margin:0 0 16px; padding-left:19px; }
+    .extended-content li + li { margin-top:7px; }
+    .exam-box { padding:18px 20px; background:var(--yellow); color:#59604c; font-size:13px; line-height:1.8; }
+    .exam-box strong { color:var(--ink); }
+    @media (max-width:760px) {
+      .wrap { width:min(100% - 34px,600px); }
+      .nav { height:66px; }
+      .subject-hero { padding:68px 0 60px; }
+      .subject-hero h1 { font-size:clamp(46px,14vw,76px); }
+      .guide { padding:60px 0 78px; }
+      .guide-intro, .guide-section-heading { display:block; }
+      .guide-intro p { margin-top:22px; }
+      .guide-section-heading .eyebrow { margin-bottom:13px; }
+      .topic-grid, .callout, .timeline { margin-left:0; }
+      .topic-grid { grid-template-columns:1fr; }
+      .timeline-item { grid-template-columns:1fr; gap:8px; }
+      .extended-notes { margin-top:48px; padding-top:42px; }
+      .extended-notes-intro h2 { font-size:34px; }
+      .extended-block { display:block; }
+      .extended-block h3 { margin-bottom:18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav wrap" aria-label="Subject navigation">
+      <a class="wordmark" href="index.html"><span class="mark">EV</span> Elena Vale</a>
+      <a class="back-link" href="index.html#curriculum">Back to semesters <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="subject-hero">
+      <div class="wrap">
+        <div class="eyebrow">PSY4108 / Semester I</div>
+        <h1>Psychological Testing <em>& Assessment</em></h1>
+        <p>A complete beginner-friendly guide to how psychologists collect evidence, measure behaviour, understand test history, make responsible decisions, and communicate results.</p>
+        <div class="hero-meta"><span>Semester I</span><span>3 credits</span><span>Fully detailed</span><span>Assessment foundations</span></div>
+      </div>
+    </section>
+
+    <section class="guide">
+      <div class="wrap">
+        <div class="guide-intro">
+          <h2>Assessment is a process. A test is one tool inside it.</h2>
+          <p>People often use assessment and testing as if they mean the same thing. They are related, but not identical. Assessment is the wider professional process of collecting, integrating, and interpreting information. Testing is a more specific process that uses a standardised device or procedure to obtain a sample of behaviour.</p>
+        </div>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit / 01</div><h2>Introduction to psychological assessment and testing</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Psychological assessment</h3><p>Psychological assessment means gathering and integrating psychology-related data to answer a practical question. A psychologist may combine tests, interviews, case history, behavioural observation, information from teachers or family, and specialised apparatuses. The final interpretation should explain the person in context, not simply list scores.</p></div>
+          <div class="topic"><h3>Purpose of assessment</h3><p>Assessment starts with a question: Why is the student struggling? Is the client depressed? Which treatment is most suitable? Can this person perform a particular job safely? The question determines which information is relevant and prevents the professional from collecting data without a clear reason.</p></div>
+          <div class="topic"><h3>Psychological testing</h3><p>Testing is the measurement part of assessment. It uses a specific device or procedure to obtain a sample of behaviour under defined conditions. A vocabulary test samples language ability; a personality inventory samples responses to statements; a reaction-time task samples speed of responding.</p></div>
+          <div class="topic"><h3>Assessment versus testing</h3><p>A test produces data, but assessment integrates data. For example, an intelligence test may show a low score, while an interview reveals poor sleep and an observation shows that the instructions were misunderstood. A responsible conclusion considers all three before making a decision.</p></div>
+        </div><div class="callout"><strong>Simple example</strong><p>A thermometer gives one measurement; a doctor also asks about symptoms, observes the patient, reviews history, and decides what the measurement means. Psychological testing is like the measurement, while psychological assessment is the complete clinical reasoning process.</p></div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">History / A</div><h2>Rudimentary testing in ancient China</h2></div>
+          <div class="timeline">
+            <div class="timeline-item"><strong>2200 B.C.</strong><div><h3>Early official examinations</h3><p>Chinese emperors used triennial examinations to judge whether officials were fit for public office. These were not psychological tests in the modern scientific sense, but they introduced an important idea: selection can be based on a common examination rather than only family status or personal recommendation.</p></div></div>
+            <div class="timeline-item"><strong>202 B.C.–200 A.D.</strong><div><h3>Han Dynasty expansion</h3><p>Written examinations included civil law, military affairs, agriculture, revenue, and geography. The content reflected the knowledge expected from administrators, showing an early connection between test content and job demands.</p></div></div>
+            <div class="timeline-item"><strong>About 1370</strong><div><h3>The final examination system</h3><p>The system focused strongly on Confucian classics. Candidates first completed a preliminary examination, often spending one day and one night in isolation writing essays and poetry. The district stage involved three sessions of three days and three nights. The final Peking examination selected a very small group who could become mandarins eligible for public office.</p></div></div>
+            <div class="timeline-item"><strong>Selection</strong><div><h3>Extreme competition</h3><p>Only about 1–7% passed the preliminary examination, 1–10% passed the district examination, and roughly 3% passed the final Peking examination. These figures show selectivity, but a low pass rate does not automatically prove that an examination is valid or fair.</p></div></div>
+            <div class="timeline-item"><strong>1906</strong><div><h3>Abolition</h3><p>The examinations were rigorous and valued penmanship and mastery of a narrow curriculum. They lacked modern scientific validation and were finally abolished in 1906. The lesson for modern assessment is clear: a difficult test is not necessarily a good test.</p></div></div>
+          </div>
+          <div class="memory"><strong>Key lesson:</strong> Standardisation and competition existed long before psychology, but scientific assessment also requires evidence that scores measure the intended ability and support fair decisions.</div>
+        </article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">History / B</div><h2>Pseudoscientific practices and early devices</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Physiognomy</h3><p>Physiognomy claimed that inner character or personality could be read from facial and physical features. Ideas of this kind go back to Aristotle in the fourth century B.C. and became popular in the eighteenth century through Johann Lavater. The approach is historically important but scientifically weak because appearance does not provide a dependable measure of character.</p></div>
+          <div class="topic"><h3>Phrenology</h3><p>Franz Joseph Gall proposed that different mental faculties were located in different brain areas and that skull bumps revealed the strength of those faculties. Johann Spurzheim helped spread the idea in the United States and United Kingdom. Phrenology encouraged people to think about brain localisation, but its skull measurements and personality claims were not valid.</p></div>
+          <div class="topic"><h3>The Psychograph</h3><p>Henry C. Lavery invented the Psychograph in 1931. It was a helmet-like machine that claimed to rate 32 mental faculties on a 1–5 scale and produce an automatic printed report. Its popularity faded by the middle of the 1930s because mechanical complexity did not create scientific validity.</p></div>
+          <div class="topic"><h3>Why these practices matter</h3><p>These examples show the danger of impressive-looking instruments. A device can appear objective because it has numbers, machinery, or a printed report. Objectivity requires a consistent method; scientific quality additionally requires reliability, validity, appropriate norms, and ethical interpretation.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">History / C</div><h2>The Brass Instruments era</h2></div><div class="topic-grid">
+          <div class="topic"><h3>The experimental shift</h3><p>In the late 1800s, psychology moved away from relying only on introspection and began measuring reaction time, sensory thresholds, discrimination, and motor speed in laboratories. The nickname "Brass Instruments" refers to the visible scientific apparatuses used in this period.</p></div>
+          <div class="topic"><h3>Wilhelm Wundt</h3><p>Wundt established the first psychology laboratory in Leipzig in 1879. Instruments such as the "thought meter" represented an attempt to study mental processes through controlled observation and measurable events. His laboratory helped establish psychology as an experimental discipline.</p></div>
+          <div class="topic"><h3>Francis Galton</h3><p>Galton believed that human faculties could be measured and is often called the father of mental testing. His 1884 London laboratory measured sensory-motor abilities and physical features. His books <em>Hereditary Genius</em> (1869) and <em>Inquiries into Human Faculty and Its Development</em> (1883) influenced later testing, although some of his heredity ideas were later used to support harmful eugenic policies.</p></div>
+          <div class="topic"><h3>James McKeen Cattell</h3><p>Cattell studied with Wundt and Galton and coined the phrase "mental test" in 1890. His proposed ten-test battery included grip strength, two-point touch, reaction time, memory span, and related sensory-motor tasks. He helped establish testing as a research topic, even though his particular measures did not predict complex academic ability well.</p></div>
+          <div class="topic"><h3>Clark Wissler and the turning point</h3><p>In 1901, Clark Wissler found almost no correlation between sensory and reaction-time tests and academic performance. The tests also showed weak relationships with one another. These findings weakened the sensory-motor approach and encouraged psychologists to measure higher cognitive processes such as reasoning, comprehension, and problem-solving.</p></div>
+        </div><div class="callout"><strong>Important distinction</strong><p>Measuring something precisely is not the same as measuring something important. Reaction time can be measured accurately, but that does not make it a valid measure of intelligence or academic success.</p></div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">History / D–E</div><h2>Rating scales and changing ideas about intellectual disability</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Early rating scales</h3><p>Galen is associated with a nine-point temperature scale based on bodily humors: four degrees of heat, four of cold, and a neutral point. Christian Thomasius developed an early psychological rating scale between 1655 and 1728, using twelve points to assess four personality traits. Later phrenologists, including Orson Fowler, used seven-point ratings in 1851.</p></div>
+          <div class="topic"><h3>Why rating scales matter</h3><p>A rating scale turns a judgement into ordered categories or numbers. Modern scales improve on early systems by defining each point, training raters, testing agreement, and checking validity. A number should represent a clearly described level of a construct, not an impression disguised as mathematics.</p></div>
+          <div class="topic"><h3>J. E. D. Esquirol</h3><p>Esquirol distinguished what was then called mental retardation from mental illness. He described the former as lifelong and the latter as having a more abrupt onset and possible recovery, and created an early speech-based classification system. Modern language uses intellectual disability and recognises that support needs, environment, and adaptive functioning matter.</p></div>
+          <div class="topic"><h3>O. E. Seguin</h3><p>Seguin, a pupil of Esquirol and Itard, moved beyond simple classification and developed education and training for people with intellectual disabilities. His 1866 book, <em>Idiocy, and Its Treatment by the Physiological Method</em>, reflected an important humanistic shift: people can learn and benefit from structured support.</p></div>
+        </div><div class="memory"><strong>Ethical language note:</strong> Historical labels such as "idiot," "imbecile," and "moron" appear below because they were part of the history of testing. They are outdated, harmful terms and must not be used to describe people today.</div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">History / F</div><h2>Binet, Simon, and modern intelligence testing</h2></div><div class="topic-grid">
+          <div class="topic"><h3>The practical problem</h3><p>In 1904, the French Ministry of Public Education asked Alfred Binet and Théodore Simon to identify children who needed special educational support. Their goal was educational assistance, not a permanent label about a child's worth or future.</p></div>
+          <div class="topic"><h3>The Binet-Simon Scale</h3><p>The 1905 scale included thirty tasks involving reasoning, comprehension, memory, and other complex mental processes. The 1908 and 1911 revisions organised tasks by age level, introduced the idea of mental level or mental age, used approximately five tasks per age level, and extended the range to adults.</p></div>
+          <div class="topic"><h3>Goddard in the United States</h3><p>Henry H. Goddard translated the scale into English in 1908 and used mental-age language to classify scores. He tested immigrants at Ellis Island and initially argued for hereditary feeblemindedness, but later reversed his position in 1928. This history shows how tests can be misused when social prejudice is treated as scientific fact.</p></div>
+          <div class="topic"><h3>Hollingworth and giftedness</h3><p>Leta Stetter Hollingworth pioneered research on gifted children, often using an IQ above 140 as a marker in her period. She advocated educational equality and specialised programmes. Her work helped establish that assessment should identify strengths and support needs, not only deficits.</p></div>
+          <div class="topic"><h3>Terman and the Stanford-Binet</h3><p>Lewis M. Terman developed the Stanford-Binet Intelligence Scale in 1916 and popularised the ratio IQ formula:</p><span class="formula">IQ = (Mental Age / Chronological Age) x 100</span><p>His longitudinal study of gifted children, often called the "Termites" study, followed participants over time. Modern IQ scores use age-based standard scores rather than relying only on this ratio.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">History / G</div><h2>Group, aptitude, and personality testing</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Army Alpha and Beta</h3><p>During World War I, the United States Army used group intelligence tests in 1917–1918. Army Alpha was mainly verbal and suited to literate English-speaking recruits. Army Beta used nonverbal material for people who could not read English. The tests made large-scale screening possible, but language, education, culture, and administration conditions affected scores.</p></div>
+          <div class="topic"><h3>Educational and aptitude growth</h3><p>In the 1920s–1940s, tests expanded into education and work. The SAT, National Intelligence Test, factor analysis, and Thurstone's work contributed to measuring abilities as related but distinguishable dimensions. Military and vocational aptitude tests became important during World War II for placement and training decisions.</p></div>
+          <div class="topic"><h3>Objective personality inventories</h3><p>Objective inventories use standard questions and fixed scoring. The Woodworth Personal Data Sheet appeared in 1919, followed by the Bernreuter Personality Inventory and the MMPI in 1943. Their strength is consistent administration and scoring; their limitation is that people can misunderstand items, hide information, or answer in socially desirable ways.</p></div>
+          <div class="topic"><h3>Projective tests</h3><p>Projective methods present ambiguous material and ask the person to respond. The Rorschach Inkblot Test appeared in 1921; the Thematic Apperception Test developed in the 1930s. Sentence-completion and figure-drawing methods are other examples. They aim to explore themes and meaning, but interpretation requires substantial training and their evidence base varies by instrument and use.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit / 02</div><h2>Purposes, settings, and applications</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Diagnosis and classification</h3><p>Assessment can help identify the nature, pattern, and severity of psychological difficulties. DSM-5 and ICD-11 provide classification frameworks, while measures such as the Beck Depression Inventory-II can assess symptom severity. A questionnaire score alone should never replace a full clinical evaluation.</p></div>
+          <div class="topic"><h3>Prediction</h3><p>Tests can estimate likely future performance or risk. The GRE may contribute to predicting academic readiness; aptitude tests may support job placement. Prediction is always probabilistic, not a guarantee. Motivation, opportunity, discrimination, health, and changing circumstances also affect outcomes.</p></div>
+          <div class="topic"><h3>Treatment planning and monitoring</h3><p>Assessment identifies strengths, needs, goals, and barriers so intervention can be tailored. Repeating appropriate measures before and after therapy can show whether symptoms or functioning changed. A score should be interpreted alongside the person's own report and observable daily-life improvement.</p></div>
+          <div class="topic"><h3>Research</h3><p>Researchers use tests to operationalise ideas such as intelligence, personality, resilience, or social support. A strong measure allows results to be compared across participants and studies. Researchers must still check reliability, validity, sampling, cultural fit, and ethical consent.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit / 03</div><h2>Assessment settings</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Educational settings</h3><p>Schools may use early developmental screening such as the Denver Developmental Screening Test, ability measures such as CogAT, achievement tests, diagnostic tests, teacher-made tests, and informal classroom observations. The purpose should be support and educational planning, not simply sorting children into fixed categories.</p></div>
+          <div class="topic"><h3>Clinical and counselling settings</h3><p>Clinical assessment supports screening, diagnosis, treatment planning, and evaluation of psychotherapy. Counselling assessment may explore vocational interests, career choice, personal growth, coping, decision-making, and adjustment. In both settings, the professional explains the purpose and limits of each measure.</p></div>
+          <div class="topic"><h3>Geriatric settings</h3><p>Assessment can examine cognitive decline, daily functioning, quality of life, and emotional wellbeing. It can help distinguish dementia from pseudodementia, in which depression can produce concentration and memory complaints. Hearing, vision, education, culture, medication, fatigue, and language must be considered.</p></div>
+          <div class="topic"><h3>Business and military settings</h3><p>Organisations use assessment for selection, placement, promotion, leadership, training, ergonomics, and consumer psychology. Tests should relate to actual job demands and should not be used as a convenient excuse for unfair exclusion.</p></div>
+          <div class="topic"><h3>Government and credentialing</h3><p>Licensing and certification examinations help ensure that doctors, lawyers, psychologists, and other professionals meet minimum standards. Good credentialing tests sample important knowledge and skills, use secure procedures, and provide fair access.</p></div>
+          <div class="topic"><h3>Forensic and court settings</h3><p>Forensic assessment may address competency to stand trial, criminal responsibility, parenting issues, or risk assessment. The psychologist must remain objective, explain the limits of evidence, and remember that a legal question is not the same as a clinical diagnosis.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit / 04</div><h2>Limitations and responsibilities</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Test-related limitations</h3><p>Norms may be culturally biased or outdated. Scores can be affected by fatigue, anxiety, mood, illness, language, unfamiliarity with testing, the physical environment, and measurement error. Every test has limited scope: a depression questionnaire does not measure intelligence, and an intelligence score does not describe a whole person.</p></div>
+          <div class="topic"><h3>User and ethical limitations</h3><p>Untrained users may administer, score, or interpret tests incorrectly. Confidentiality can be harmed when results are shared carelessly. Raw scores without norms and context can mislead. Test takers deserve informed consent, understandable feedback, reasonable accommodation, and protection from discriminatory use.</p></div>
+          <div class="topic"><h3>Situational and practical limits</h3><p>Performance can change with stress, timing, sleep, illness, practice, or the relationship with the examiner. Tests are not perfectly accurate long-term predictors of complex life outcomes. Cost, time, travel, technology, disability access, and shortages of trained professionals can make assessment difficult in remote or under-resourced areas.</p></div>
+          <div class="topic"><h3>Responsibilities of publishers and developers</h3><p>Publishers and developers should provide evidence of reliability and validity, clear manuals, current norms, standardised instructions, appropriate translations, security, scoring guidance, and warnings about limitations. They should revise or withdraw materials when evidence shows that they are unsafe or misleading.</p></div>
+          <div class="topic"><h3>Responsibilities of sponsors and test users</h3><p>Sponsors should fund appropriate development and use. Test users should be competent, follow the manual, select a measure suited to the question, protect records, explain results fairly, consider culture and disability, and avoid making high-stakes decisions from one score alone. These responsibilities are discussed in professional testing guidance, including the responsibilities outlined by Gregory.</p></div>
+          <div class="topic"><h3>Responsibilities to the person assessed</h3><p>The person is more important than the score. Explain why the assessment is happening, obtain consent where appropriate, provide respectful feedback, distinguish evidence from opinion, correct errors, and recommend useful next steps. Assessment should increase understanding and support, not create a permanent label.</p></div>
+        </div><div class="callout"><strong>Final professional rule</strong><p>Use the right measure for the right question, with the right training, in the right context. Integrate multiple sources of information and communicate uncertainty honestly.</p></div></article>
+
+        <section class="extended-notes">
+          <div class="extended-notes-intro"><div class="eyebrow">Extended classroom notes</div><h2>How to think like an assessor.</h2><p>The history becomes useful when it changes how we make decisions today. These notes connect the definitions, historical milestones, methods, settings, and ethical responsibilities into one practical way of thinking.</p></div>
+
+          <article class="extended-block"><h3>Assessment is a reasoning process</h3><div class="extended-content">
+            <h4>Start with a referral question</h4><p>An assessment should never begin with the vague goal of "giving tests." It begins with a decision that needs evidence. A teacher may want to know why a child is not progressing, a clinician may want to understand symptoms, and an employer may need evidence about job-related skills. Each question requires different methods and a different standard for a useful answer.</p>
+            <h4>Gather, compare, and integrate</h4><p>The assessor collects information from more than one source, checks whether the sources agree, and investigates disagreement instead of hiding it. A low memory score might reflect genuine difficulty, anxiety, poor sleep, unfamiliar language, medication, or an unclear instruction. Integration means explaining the whole pattern and the confidence we can reasonably have in it.</p>
+            <h4>Assessment is not a label</h4><p>A diagnosis or classification is one possible conclusion, not the person's identity. Good assessment describes strengths, needs, context, and possible supports. It also states what the available evidence cannot answer. This protects the person from being reduced to a score that was collected for one limited purpose.</p>
+            <div class="exam-box"><strong>Exam answer pattern:</strong> Define assessment as a multi-method process, explain the referral question, name at least two sources of evidence, and state why integration is more informative than one isolated score.</div>
+          </div></article>
+
+          <article class="extended-block"><h3>What makes a test standardised?</h3><div class="extended-content">
+            <h4>Common conditions</h4><p>Standardisation means that administration and scoring are controlled well enough for scores to be comparable. The manual may specify the exact instructions, order of items, time limit, materials, permitted prompts, scoring rules, and conditions for stopping. Small changes can matter, especially in speeded or individually administered tests.</p>
+            <h4>Norms and interpretation</h4><p>A raw score is only the number of correct answers or endorsed statements. It becomes interpretable when compared with an appropriate norm group or criterion. A score's meaning depends on age, language, education, culture, disability, and the reason for testing. Norms can become outdated, so a responsible user checks when and how they were developed.</p>
+            <h4>Standardisation is not fairness by itself</h4><p>Giving everyone the same instructions can create consistent procedures while still disadvantaging people who do not share the language or cultural experience of the norm group. Fair assessment may require accessible materials, accommodations, translation, or a different measure, while preserving the construct the test is meant to measure.</p>
+          </div></article>
+
+          <article class="extended-block"><h3>Reliability and validity in depth</h3><div class="extended-content">
+            <h4>Reliability asks: would the measurement be similar?</h4><ul><li><strong>Test-retest reliability:</strong> are scores reasonably stable across time when the trait should be stable?</li><li><strong>Internal consistency:</strong> do items intended to measure the same construct relate to one another?</li><li><strong>Inter-rater reliability:</strong> do trained raters score the same behaviour similarly?</li><li><strong>Parallel-forms reliability:</strong> do equivalent versions produce comparable results?</li></ul>
+            <h4>Validity asks: is the interpretation supported?</h4><p>Content validity asks whether the items represent the construct. Criterion-related validity asks whether scores relate to a meaningful outcome or criterion. Construct validity asks whether the measure behaves as theory predicts. Face validity, or looking appropriate on the surface, may help acceptance but is not enough evidence by itself.</p>
+            <h4>Error is always possible</h4><p>Observed performance is a combination of the person's actual standing and measurement error. The error may come from the test, the examiner, the setting, the person, or chance. This is why responsible reports avoid pretending that a score is perfectly exact and use confidence intervals or cautious language where appropriate.</p>
+            <div class="exam-box"><strong>Do not confuse them:</strong> reliability is consistency of measurement; validity is the quality of the conclusion drawn from that measurement.</div>
+          </div></article>
+
+          <article class="extended-block"><h3>What history teaches us about bias</h3><div class="extended-content">
+            <h4>From selection to support</h4><p>The ancient Chinese examinations demonstrate large-scale selection but also show that a narrow curriculum can reward familiarity with one tradition rather than general ability. Galton and Cattell demonstrated the attraction of measuring visible, simple abilities, while Wissler's findings showed that a precise sensory measure may fail to predict complex performance.</p>
+            <h4>Intelligence testing and social policy</h4><p>Binet created his scale to identify educational support needs. Later users sometimes treated mental age or IQ as a fixed biological ranking and used tests to justify segregation, immigration restrictions, and eugenic policies. Goddard's changing views are a warning that scientific authority does not prevent cultural prejudice from entering interpretation.</p>
+            <h4>Modern implication</h4><p>Before using a test, ask who developed it, who was included in the norm sample, what language and education it assumes, who benefits from the decision, and whether an alternative explanation for the score exists. Historical knowledge makes the assessor more cautious and more humane.</p>
+          </div></article>
+
+          <article class="extended-block"><h3>Choosing a method for the setting</h3><div class="extended-content">
+            <h4>Match the method to the question</h4><ul><li>Use developmental screening for early warning signs, not a final diagnosis.</li><li>Use achievement tests to examine learned curriculum, not innate worth.</li><li>Use aptitude tests when future training performance is relevant and the test reflects actual demands.</li><li>Use interviews and observation when behaviour depends strongly on context.</li><li>Use symptom measures to monitor change, while checking whether daily functioning also improves.</li></ul>
+            <h4>High-stakes decisions need stronger evidence</h4><p>A test used for a low-stakes conversation and a test used to deny a job or decide legal responsibility should not be treated as equivalent. The higher the consequences, the stronger the evidence, fairness checks, security, informed consent, documentation, and opportunity for review should be.</p>
+            <h4>Special populations</h4><p>Children, older adults, people with disabilities, multilingual clients, people with limited literacy, and people in crisis may need adapted procedures. An accommodation should remove an irrelevant barrier without changing the ability being measured. When that is impossible, the assessor must state the limitation clearly.</p>
+          </div></article>
+
+          <article class="extended-block"><h3>Professional responsibility in practice</h3><div class="extended-content">
+            <h4>Before testing</h4><p>Clarify the purpose, obtain appropriate consent, explain who will see the report, check competence, select suitable tools, and plan accommodations. The person should know what participation involves and what the assessment can and cannot decide.</p>
+            <h4>During testing</h4><p>Follow standard procedures, build a respectful working relationship, observe behaviour, record relevant conditions, protect test materials, and avoid coaching or changing instructions in ways that invalidate comparisons. If the person is distressed or unwell, pause and consider whether the results will be meaningful.</p>
+            <h4>After testing</h4><p>Score accurately, integrate the results with other evidence, describe limitations, protect confidentiality, and give feedback in language the person can understand. A report should answer the referral question and recommend practical next steps rather than burying the reader in unexplained numbers.</p>
+            <div class="exam-box"><strong>Professional standard:</strong> Competence, informed consent, confidentiality, fairness, evidence-based interpretation, cultural sensitivity, and accountability apply to every test user.</div>
+          </div></article>
+        </section>
+
+        <div class="footer-note"><div class="eyebrow">Study prompt</div><p>For any assessment question, write five lines: What decision is needed? What construct matters? Which methods will provide evidence? What limitations could affect the result? How will the findings be used ethically?</p></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Beginner-friendly study guide for PSY4109 Community Psychology and Community Mental Health.">
+  <title>PSY4109 | Community Psychology & Community Mental Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#202927; --muted:#6c7771; --paper:#f4f5ef; --cream:#fbfbf7; --line:#d8ddd4; --sage:#b8c6b1; --deep-sage:#526c5c; --coral:#c9684b; --yellow:#e9d995; --serif:"Playfair Display",Georgia,serif; --sans:"DM Sans",Arial,sans-serif; --mono:"DM Mono",monospace; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1180px,calc(100% - 56px)); margin:0 auto; }
+    .eyebrow { color:var(--deep-sage); font:500 11px var(--mono); letter-spacing:.08em; text-transform:uppercase; }
+    header { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--line); background:rgba(244,245,239,.9); backdrop-filter:blur(14px); }
+    .nav { height:76px; display:flex; align-items:center; justify-content:space-between; }
+    .wordmark { display:inline-flex; align-items:center; gap:11px; font-weight:700; letter-spacing:-.04em; }
+    .mark { display:grid; place-items:center; width:30px; height:30px; border-radius:50%; background:var(--coral); color:var(--cream); font:600 13px var(--serif); }
+    .back-link { color:var(--deep-sage); font:500 11px var(--mono); text-transform:uppercase; letter-spacing:.06em; }
+    .back-link:hover { color:var(--coral); }
+    .subject-hero { padding:96px 0 78px; background:var(--cream); border-bottom:1px solid var(--line); }
+    .subject-hero h1 { max-width:850px; margin:18px 0 24px; font:500 clamp(48px,7vw,90px)/.98 var(--serif); letter-spacing:-.055em; }
+    .subject-hero h1 em { color:var(--deep-sage); }
+    .subject-hero p { max-width:620px; margin:0; color:var(--muted); font-size:16px; line-height:1.8; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:34px; }
+    .hero-meta span { padding:9px 12px; border:1px solid var(--line); color:var(--deep-sage); font:500 10px var(--mono); text-transform:uppercase; }
+    .guide { padding:76px 0 110px; }
+    .guide-intro { display:grid; grid-template-columns:.8fr 1.2fr; gap:12%; padding:0 0 70px; }
+    .guide-intro h2 { margin:0; font:500 30px/1.15 var(--serif); }
+    .guide-intro p { max-width:650px; margin:0; color:var(--muted); font-size:15px; line-height:1.8; }
+    .guide-section { padding:52px 0; border-top:1px solid var(--line); }
+    .guide-section-heading { display:grid; grid-template-columns:220px 1fr; gap:50px; margin-bottom:30px; }
+    .guide-section-heading .eyebrow { padding-top:7px; }
+    .guide-section-heading h2 { margin:0; font:500 30px/1.1 var(--serif); letter-spacing:-.03em; }
+    .topic-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px 42px; margin-left:270px; }
+    .topic h3 { margin:0 0 8px; font-size:16px; }
+    .topic p, .topic li { color:var(--muted); font-size:13px; line-height:1.7; }
+    .topic p { margin:0; }
+    .topic ul, .topic ol { margin:8px 0 0; padding-left:18px; }
+    .topic li + li { margin-top:5px; }
+    .guide-callout { margin:35px 0 0 270px; padding:22px 25px; border-left:3px solid var(--coral); background:var(--cream); }
+    .guide-callout strong { display:block; margin-bottom:6px; font:500 18px var(--serif); }
+    .guide-callout p { margin:0; color:var(--muted); font-size:13px; line-height:1.7; }
+    .scale-list { columns:2; column-gap:45px; }
+    .scale-list li { break-inside:avoid; margin-bottom:9px; }
+    .guide-footer { margin-top:50px; padding:28px 0 0; border-top:1px solid var(--ink); }
+    .guide-footer p { max-width:700px; color:var(--muted); font-size:13px; line-height:1.7; }
+    .extended-notes { margin-top:72px; padding-top:58px; border-top:1px solid var(--ink); }
+    .extended-notes-intro { max-width:720px; margin-bottom:38px; }
+    .extended-notes-intro h2 { margin:12px 0 14px; font:500 40px/1.08 var(--serif); letter-spacing:-.04em; }
+    .extended-notes-intro p { margin:0; color:var(--muted); font-size:14px; line-height:1.8; }
+    .extended-block { display:grid; grid-template-columns:220px 1fr; gap:50px; padding:34px 0; border-top:1px solid var(--line); }
+    .extended-block h3 { margin:0; font:500 24px/1.15 var(--serif); }
+    .extended-content { max-width:760px; }
+    .extended-content h4 { margin:0 0 7px; font-size:15px; }
+    .extended-content p, .extended-content li { color:var(--muted); font-size:13px; line-height:1.85; }
+    .extended-content p { margin:0 0 16px; }
+    .extended-content ul, .extended-content ol { margin:0 0 16px; padding-left:19px; }
+    .extended-content li + li { margin-top:7px; }
+    .community-box { padding:18px 20px; background:var(--yellow); color:#59604c; font-size:13px; line-height:1.8; }
+    .community-box strong { color:var(--ink); }
+    .deep-dive { margin-top:70px; padding:58px 0; border-top:1px solid var(--ink); }
+    .deep-dive-intro { max-width:700px; margin-bottom:38px; }
+    .deep-dive-intro h2 { margin:12px 0 14px; font:500 40px/1.08 var(--serif); letter-spacing:-.04em; }
+    .deep-dive-intro p { margin:0; color:var(--muted); font-size:14px; line-height:1.8; }
+    .deep-topic { display:grid; grid-template-columns:220px 1fr; gap:50px; padding:34px 0; border-top:1px solid var(--line); }
+    .deep-topic h3 { margin:0; font:500 24px/1.15 var(--serif); }
+    .deep-topic-content { max-width:760px; }
+    .deep-topic-content h4 { margin:0 0 7px; font-size:15px; }
+    .deep-topic-content p, .deep-topic-content li { color:var(--muted); font-size:13px; line-height:1.8; }
+    .deep-topic-content p { margin:0 0 16px; }
+    .deep-topic-content ul, .deep-topic-content ol { margin:0 0 16px; padding-left:19px; }
+    .deep-topic-content li + li { margin-top:7px; }
+    .remember { padding:17px 20px; background:var(--yellow); color:#59604c; font-size:13px; line-height:1.7; }
+    .remember strong { color:var(--ink); }
+    @media (max-width:760px) {
+      .wrap { width:min(100% - 34px,600px); }
+      .nav { height:66px; }
+      .subject-hero { padding:68px 0 60px; }
+      .subject-hero h1 { font-size:clamp(46px,14vw,76px); }
+      .guide { padding:60px 0 78px; }
+      .guide-intro, .guide-section-heading { display:block; }
+      .guide-intro p { margin-top:22px; }
+      .guide-section-heading .eyebrow { margin-bottom:13px; }
+      .topic-grid, .guide-callout { margin-left:0; }
+      .topic-grid { grid-template-columns:1fr; }
+      .scale-list { columns:1; }
+      .deep-dive { margin-top:48px; padding-top:42px; }
+      .deep-dive-intro h2 { font-size:34px; }
+      .deep-topic { display:block; }
+      .deep-topic h3 { margin-bottom:18px; }
+      .extended-notes { margin-top:48px; padding-top:42px; }
+      .extended-notes-intro h2 { font-size:34px; }
+      .extended-block { display:block; }
+      .extended-block h3 { margin-bottom:18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav wrap" aria-label="Subject navigation">
+      <a class="wordmark" href="index.html"><span class="mark">EV</span> Elena Vale</a>
+      <a class="back-link" href="index.html#curriculum">Back to semesters <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="subject-hero">
+      <div class="wrap">
+        <div class="eyebrow">PSY4109 / Semester I</div>
+        <h1>Community Psychology & <em>Community Mental Health</em></h1>
+        <p>A clear starting point for understanding how people, communities, institutions, and social conditions shape mental health. Read it as a lesson, a revision guide, or a map for deeper study.</p>
+        <div class="hero-meta"><span>Semester I</span><span>3 credits</span><span>Beginner friendly</span><span>10 study sections</span></div>
+      </div>
+    </section>
+
+    <section class="guide">
+      <div class="wrap">
+        <div class="guide-intro">
+          <h2>Psychology does not happen in a vacuum.</h2>
+          <p>Community psychology studies how people and their surroundings affect one another. Instead of asking only, "What is wrong with this person?", it also asks, "What is happening in this person's family, school, workplace, neighbourhood, and society?" The goal is to prevent problems, strengthen communities, and give people a real voice in decisions that affect their lives.</p>
+        </div>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit I / 01</div><h2>Introduction and historical beginnings</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Why did the field emerge?</h3><p>During the 1960s, many psychologists felt that clinic-based treatment could not solve problems such as poverty, discrimination, unsafe housing, and limited access to care. Helping one person at a time mattered, but it did not change the conditions making many people unwell. Community psychology grew from this dissatisfaction and shifted attention toward prevention and social change.</p></div>
+          <div class="topic"><h3>The 1965 Swampscott Conference</h3><p>The conference in Swampscott, Massachusetts is widely treated as a founding moment. Professionals argued that psychologists should work with communities, not only wait for people to enter hospitals or clinics. Seymour Bernard Sarason and James Gordon Kelly are among the important figures connected with this early development.</p></div>
+          <div class="topic"><h3>Institutions and journals</h3><p>APA Division 27 became the Society for Community Research and Action (SCRA). Journals such as the <em>American Journal of Community Psychology</em>, <em>Journal of Community Psychology</em>, and <em>Journal of Community & Applied Social Psychology</em> help researchers share evidence and debate better ways to support communities.</p></div>
+          <div class="topic"><h3>Simple example</h3><p>If a school has rising anxiety, a clinical response might offer counselling to affected students. A community psychology response may also examine exam pressure, teacher support, bullying, family stress, transport, and school policy, then design prevention with students and staff.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit I / 02</div><h2>Definition and scope</h2></div><div class="topic-grid">
+          <div class="topic"><h3>What is community psychology?</h3><p>It is the study of relationships between individuals and the social systems around them. It uses collaborative research and practical action to improve quality of life. A person is never reduced to a diagnosis; their strengths, relationships, culture, resources, and barriers are considered too.</p></div>
+          <div class="topic"><h3>Prevention and promotion</h3><p>Prevention tries to reduce a problem before it becomes severe. Promotion builds conditions that support wellbeing, such as safe parks, supportive parenting groups, mental health education, and welcoming schools. This is why the field often works with whole populations, not only people already in crisis.</p></div>
+          <div class="topic"><h3>Support and belonging</h3><p>Social support means practical, emotional, or informational help from other people. A sense of community is the feeling that we belong, matter to one another, and can rely on the group. Both can protect mental health and make it easier to seek help.</p></div>
+          <div class="topic"><h3>Power, justice, and action</h3><p>Community psychologists study empowerment, mental health services, policy, crisis response, disaster recovery, and program evaluation. They also address poverty, diversity, discrimination, human rights, and other conditions that create unequal opportunities for health.</p></div>
+        </div><div class="guide-callout"><strong>Key idea: person-in-context</strong><p>Behaviour makes more sense when we look at the setting around it. A student who misses class may be unmotivated, but may also be caring for a family member, facing unsafe transport, or working long hours. Good assessment begins with curiosity rather than blame.</p></div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit I / 03</div><h2>Community psychology in India</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Moving beyond hospital-only care</h3><p>India's community mental health story includes a gradual move away from treating hospitals as the only place for care. Community-based work tries to make support available closer to where people live, while respecting family life, local culture, and existing community resources.</p></div>
+          <div class="topic"><h3>Bhore Committee, 1946</h3><p>The committee encouraged prevention, health education, and the integration of health services with community life. Its wider importance is the idea that health systems should not wait until illness becomes serious; they should build healthier conditions from the beginning.</p></div>
+          <div class="topic"><h3>Dr. Vidya Sagar</h3><p>In the 1950s, Dr. Vidya Sagar promoted family involvement in patient treatment. Families were treated as partners who could support recovery, understand the person's daily life, and help care continue after discharge.</p></div>
+          <div class="topic"><h3>Prof. Durganand Sinha</h3><p>Prof. Durganand Sinha examined the Community Development Programme and its social effects. His work, including <em>Indian Villages in Transition</em> (1969), showed why psychological ideas need to be understood alongside social and economic change.</p></div>
+          <div class="topic"><h3>CPAI and Indian scholarship</h3><p>The Community Psychology Association of India was established in Lucknow in 1987. The <em>Indian Journal of Community Psychology</em>, launched in 2004, helped create a space for Indian research, local experiences, and culturally relevant practice.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit I / 04</div><h2>Core values and principles</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Wellness before crisis</h3><p>Prevention is preferred over waiting for a problem to become severe. Wellness includes emotional health, physical safety, relationships, purpose, and access to resources. Families and communities are part of the solution, not just the background.</p></div>
+          <div class="topic"><h3>Respect for diversity</h3><p>People differ in language, culture, gender, ability, religion, class, age, and life experience. A helpful intervention does not assume that one definition of a good life fits everyone. It listens first and adapts respectfully.</p></div>
+          <div class="topic"><h3>Participation and empowerment</h3><p>People affected by an issue should help define it and decide what happens next. Empowerment means increasing voice, skills, access, and control rather than making people dependent on professionals.</p></div>
+          <div class="topic"><h3>Evidence and collaboration</h3><p>Community work should be empirically grounded: decisions are informed by careful evidence and evaluation. At the same time, psychologists collaborate with residents, teachers, health workers, social workers, policymakers, and local leaders.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit I / 05</div><h2>The role of a community psychologist</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Many roles, one purpose</h3><p>A community psychologist may be a researcher and evaluator, consultant, program developer, community organiser, policy advocate, educator or trainer, change agent, and collaborator. The role changes according to what the community needs.</p></div>
+          <div class="topic"><h3>What makes the role different?</h3><p>The psychologist is not always the person with the final answer. Their job may be to bring people together, make evidence understandable, identify strengths, question unfair systems, develop a practical programme, and check whether it is actually helping.</p></div>
+          <div class="topic"><h3>Example in practice</h3><p>For a youth substance-use project, the psychologist might interview young people, map local services, train peer educators, advise a school, help advocate for policy change, and evaluate outcomes with the community.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit I / 06</div><h2>Theoretical models and approaches</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Ecological model</h3><p>People are influenced by nested systems. The <strong>microsystem</strong> includes family and friends; an organisation includes schools or workplaces; a locality includes neighbourhoods; and the macrosystem includes laws, culture, economics, and social values. Bronfenbrenner and Kelly helped shape this way of thinking.</p></div>
+          <div class="topic"><h3>Public health and prevention model</h3><p><strong>Primary prevention</strong> acts before a problem begins, such as a life-skills programme. <strong>Secondary prevention</strong> finds and responds to early signs, such as screening. <strong>Tertiary prevention</strong> reduces harm and supports recovery after a problem is established.</p></div>
+          <div class="topic"><h3>Empowerment model</h3><p>This model asks who has power, who is left out, and how decision-making can be shared. The professional moves from expert to collaborator. People gain information, confidence, skills, connections, and influence over their own conditions.</p></div>
+          <div class="topic"><h3>Sense of community model</h3><p>McMillan and Chavis describe belonging through membership, influence, fulfilment of needs, and emotional connection. Sarason described sense of community as the feeling that one belongs to a dependable network. Strong belonging can support resilience and participation.</p></div>
+          <div class="topic"><h3>Social action and social change</h3><p>This approach looks at structural causes such as poverty, discrimination, exclusion, and unequal access. It does not blame individuals for conditions created by systems; it supports collective action to make those systems fairer.</p></div>
+          <div class="topic"><h3>Participatory action research</h3><p>In PAR, community members are co-researchers. Together they identify a problem, collect and interpret information, take action, and review what happened. Research becomes a cycle of learning and change rather than something done to people from outside.</p></div>
+          <div class="topic"><h3>Person-environment fit</h3><p>Kelly's ecological diversity approach asks whether a person's needs, abilities, and identity fit the opportunities and demands of their environment. A better match may come from changing the setting, not forcing the person to change alone.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit II / 01</div><h2>Psychological tests and test creation</h2></div><div class="topic-grid">
+          <div class="topic"><h3>What is a psychological test?</h3><p>It is a standardized instrument used to measure a mental attribute or pattern of behaviour, such as intelligence, personality, attitudes, wellbeing, or social support. Standardized means that instructions, scoring, and interpretation follow a consistent process. Kaplan and Saccuzzo and the APA emphasise this systematic nature.</p></div>
+          <div class="topic"><h3>Common classifications</h3><ul><li><strong>Individual or group:</strong> one person at a time or many people together.</li><li><strong>Objective or subjective:</strong> fixed scoring or professional judgement.</li><li><strong>Power or speed:</strong> enough time to show ability or strict time pressure.</li><li><strong>Verbal, non-verbal, or performance:</strong> language, symbols, or practical tasks.</li></ul></div>
+          <div class="topic"><h3>What makes a good test?</h3><p>It should be objective, reliable, valid, based on suitable norms, and practical to use. <strong>Reliability</strong> means consistency. <strong>Validity</strong> means the test really measures what it claims. <strong>Norms</strong> help compare a score with an appropriate reference group.</p></div>
+          <div class="topic"><h3>Steps in test construction</h3><ol><li>Define the construct and purpose.</li><li>Choose content and item formats.</li><li>Write a broad draft pool of items.</li><li>Try out the test and study difficulty and discrimination.</li><li>Establish reliability and validity.</li><li>Prepare the final test, norms, and manual.</li></ol></div>
+          <div class="topic"><h3>Three construction strategies</h3><p><strong>Deductive</strong> construction starts with a theory. <strong>Inductive</strong> construction builds from patterns found across items or observations. <strong>Empirical</strong> construction keeps items that statistically distinguish relevant groups or outcomes.</p></div>
+        </div><div class="guide-callout"><strong>Beginner's check</strong><p>A test can be consistent without being accurate. A broken weighing scale that always shows five kilograms too much is reliable, but it is not valid. Good psychological measurement needs both consistency and accuracy.</p></div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Unit II / 02</div><h2>Community-centred tests and scales</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Sense of community</h3><ul class="scale-list"><li>Sense of Community Index (SCI / SCI-2)</li><li>Brief Sense of Community Scale (BSCS)</li><li>Psychological Sense of Community Scale (PSCS)</li><li>Neighborhood Sense of Community Scale (NSCS)</li></ul></div>
+          <div class="topic"><h3>Empowerment and control</h3><ul class="scale-list"><li>Sociopolitical Control Scale (SPCS)</li><li>Psychological Empowerment Scale (PES)</li><li>Resident Empowerment Scale</li></ul></div>
+          <div class="topic"><h3>Social support and cohesion</h3><ul class="scale-list"><li>Multidimensional Scale of Perceived Social Support (MSPSS)</li><li>Social Provisions Scale (SPS)</li><li>Interpersonal Support Evaluation List (ISEL)</li><li>Neighborhood Cohesion Instrument (NCI)</li><li>Collective Efficacy Scale</li></ul></div>
+          <div class="topic"><h3>Participation and engagement</h3><ul class="scale-list"><li>Citizen Participation Scale</li><li>Community Involvement Questionnaire (CIQ)</li><li>Civic Engagement Scale (CES)</li></ul></div>
+          <div class="topic"><h3>Wellbeing and resilience</h3><ul class="scale-list"><li>WHOQOL-BREF</li><li>Satisfaction With Life Scale (SWLS)</li><li>Personal Wellbeing Index (PWI)</li><li>Connor-Davidson Resilience Scale (CD-RISC)</li><li>Community Resilience Scale (CRS)</li></ul></div>
+          <div class="topic"><h3>How to use a scale responsibly</h3><p>A questionnaire is not a diagnosis by itself. Check permission, language, cultural fit, scoring rules, privacy, and whether the measure was validated for the population. Use scores to start a conversation and guide action, not to label people carelessly.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Global perspectives</div><h2>International examples and case studies</h2></div><div class="topic-grid">
+          <div class="topic"><h3>Australia and New Zealand</h3><p>Community psychology increasingly considers Indigenous knowledge, cultural identity, colonisation, and decolonial practice. This means questioning whose knowledge counts and making space for community-defined healing and leadership.</p></div>
+          <div class="topic"><h3>Latin America and Sub-Saharan Africa</h3><p>Work in these regions often connects mental health with political history, poverty, community organising, anti-oppression, and social change. Psychological support may be linked with collective action and rights-based development.</p></div>
+          <div class="topic"><h3>UK Unemployment PAR Project</h3><p>Fryer and Fagan's 2003 project used a critical lens to study unemployment and mental health. Its lesson is that distress is not only an individual weakness; loss of income, identity, routine, status, and opportunity can all matter.</p></div>
+          <div class="topic"><h3>European labour-discrimination network</h3><p>García-Ramírez and colleagues (2009) examined immigrant labour rights across three countries. The project shows how collaboration across settings can make discrimination visible and support fairer employment systems.</p></div>
+        </div></article>
+
+        <article class="guide-section"><div class="guide-section-heading"><div class="eyebrow">Indian case study</div><h2>Atmiyata: care that starts in the community</h2></div><div class="topic-grid">
+          <div class="topic"><h3>What is Atmiyata?</h3><p>Atmiyata is a community-led, evidence-based mental health intervention in rural India that has been recognised by the World Health Organization. It aims to make basic mental health support available through trusted local people rather than relying only on specialists or distant hospitals.</p></div>
+          <div class="topic"><h3>Task-shifting</h3><p>Task-shifting means training suitable community members to provide selected forms of support traditionally associated with specialists. Atmiyata trains volunteers called Champions and Mitras to notice common mental health concerns, offer basic counselling, and connect people to further care when needed.</p></div>
+          <div class="topic"><h3>Connecting levels of care</h3><p>The intervention links primary care, secondary mental health care, and social support. Digital awareness tools help spread information, reduce stigma, and guide people towards the right level of help. The system is stronger because the levels communicate rather than work in isolation.</p></div>
+          <div class="topic"><h3>Why it matters</h3><p>Atmiyata demonstrates several community psychology principles at once: prevention, empowerment, collaboration, cultural fit, accessibility, and evaluation. It also shows that technology works best when it supports human relationships already trusted in the community.</p></div>
+        </div><div class="guide-callout"><strong>Exam-ready summary</strong><p>Community psychology connects mental health with context, prevention, participation, power, and social justice. A community psychologist studies systems, works with people as partners, uses evidence responsibly, and helps communities create conditions in which wellbeing is possible.</p></div></article>
+
+        <section class="deep-dive" id="expanded-notes">
+          <div class="deep-dive-intro"><div class="eyebrow">Expanded lecture notes</div><h2>Understand the ideas, not just the names.</h2><p>The notes below unpack every part of the syllabus in everyday language. Use the short sections first, then return to the shaded memory lines when revising.</p></div>
+
+          <article class="deep-topic"><h3>1. How community psychology began</h3><div class="deep-topic-content">
+            <h4>The problem with an individual-only approach</h4><p>Traditional clinical psychology is often organised around an individual client, a diagnosis, and treatment delivered by a professional. That approach can be valuable, but it becomes limited when the same distress appears across a whole neighbourhood. If many families experience hunger, unsafe housing, discrimination, or no access to services, counselling alone cannot remove those pressures.</p>
+            <h4>The historical shift</h4><p>During the 1960s, psychologists began asking whether the field should intervene earlier and work in ordinary settings such as schools, workplaces, villages, and neighbourhoods. The 1965 Swampscott Conference gave this movement a clear identity. Its central message was that psychologists should help prevent problems, build competence, and change unhealthy environments as well as treat illness.</p>
+            <h4>Why institutions matter</h4><p>Professional groups and journals gave the new field a place to develop. APA Division 27, now the Society for Community Research and Action, supports research and practice. The major journals named in the syllabus allow researchers to test programmes, report community experiences, and question whether an intervention works across cultures.</p>
+            <div class="remember"><strong>Remember:</strong> Community psychology grew by widening the question from "How do we treat this person?" to "What conditions help people and communities stay well?"</div>
+          </div></article>
+
+          <article class="deep-topic"><h3>2. Definition, scope, and prevention</h3><div class="deep-topic-content">
+            <h4>Individual and social systems are connected</h4><p>A social system is an organised pattern of relationships and rules: a family, school, workplace, health service, government department, or neighbourhood. These systems shape opportunities and stress. In turn, people influence systems through participation, leadership, resistance, and collective action.</p>
+            <h4>What community psychologists actually do</h4><ul><li><strong>Prevention:</strong> reduce risk before serious distress develops.</li><li><strong>Mental health promotion:</strong> build skills, belonging, safety, and supportive environments.</li><li><strong>Social support:</strong> strengthen emotional, practical, and informational help.</li><li><strong>Empowerment:</strong> increase the voice and decision-making power of people who are often ignored.</li><li><strong>Evaluation:</strong> check whether a programme is useful, fair, accessible, and sustainable.</li><li><strong>Advocacy and crisis response:</strong> influence policy and coordinate support during disasters or emergencies.</li></ul>
+            <h4>Three prevention levels</h4><p>Primary prevention happens before a problem appears, such as teaching emotional skills to all students. Secondary prevention detects early warning signs and responds quickly, such as screening and brief support. Tertiary prevention reduces the effects of an established problem and helps people recover, such as rehabilitation and relapse prevention.</p>
+            <div class="remember"><strong>Remember:</strong> Scope means more than therapy. It includes prevention, relationships, services, policy, research, rights, and the social conditions of mental health.</div>
+          </div></article>
+
+          <article class="deep-topic"><h3>3. India: from institutions to communities</h3><div class="deep-topic-content">
+            <h4>Why the Indian history is important</h4><p>In a large and diverse country, specialist services cannot reach every person through hospitals alone. Community psychology therefore asks how care can be brought closer to homes, families, schools, primary health centres, and local networks. It also asks how Indian cultural knowledge and family relationships can be included without placing all responsibility on families.</p>
+            <h4>Milestones as a connected story</h4><ol><li>The Bhore Committee (1946) encouraged prevention, health education, and community assimilation rather than waiting for illness to become severe.</li><li>Dr. Vidya Sagar's work in the 1950s showed the value of involving families in treatment and recovery.</li><li>Prof. Durganand Sinha examined community development and social change, including the transition of Indian villages described in his 1969 work.</li><li>The Community Psychology Association of India, founded in Lucknow in 1987, created a professional home for this work. The Indian Journal of Community Psychology, launched in 2004, strengthened local scholarship.</li></ol>
+            <p>These milestones show a movement from a hospital-centred model toward prevention, family partnership, local participation, and culturally relevant services.</p>
+            <div class="remember"><strong>Exam connection:</strong> When writing about India, connect each milestone to the larger shift: prevention, family involvement, community development, and local professional knowledge.</div>
+          </div></article>
+
+          <article class="deep-topic"><h3>4. Values, power, and professional roles</h3><div class="deep-topic-content">
+            <h4>Values are not decoration</h4><p>Values influence what a psychologist notices, who is invited into a project, what counts as success, and how resources are distributed. Wellness, diversity, justice, participation, empowerment, collaboration, evidence, and interdisciplinary work should guide the whole process, from defining a problem to evaluating a solution.</p>
+            <h4>Expert or collaborator?</h4><p>A professional may have research knowledge, but residents have lived knowledge. A respectful project combines both. Instead of arriving with a finished programme, the psychologist might hold listening meetings, map local strengths, share findings in an understandable format, and allow the community to change the plan.</p>
+            <h4>The non-traditional role set</h4><p>The psychologist may work as a researcher and evaluator, consultant, programme developer, community organiser, policy advocate, educator or trainer, change agent, and collaborator. These roles overlap. For example, a programme developer must listen like a collaborator, evaluate like a researcher, and advocate when a policy blocks access.</p>
+            <div class="remember"><strong>Remember:</strong> The goal is not to make a community dependent on an expert. The goal is to leave people with more knowledge, voice, connection, and control.</div>
+          </div></article>
+
+          <article class="deep-topic"><h3>5. Models for understanding communities</h3><div class="deep-topic-content">
+            <h4>Ecological model</h4><p>Think of a person inside a set of expanding circles. The microsystem includes direct relationships such as family and friends. Organisations include schools, clinics, and workplaces. Locality includes the neighbourhood and available services. The macrosystem includes laws, economics, culture, history, and social attitudes. A change in one circle can affect the others.</p>
+            <h4>Empowerment and social action</h4><p>The empowerment model studies control: who makes decisions, whose knowledge is believed, and who receives resources. The social action model goes further by examining structural inequality such as poverty, racism, discrimination, and exclusion. Both reject the idea that distress is always caused by an individual's weakness.</p>
+            <h4>Sense of community</h4><p>Sarason described a feeling of belonging to a dependable network. McMillan and Chavis explained it through membership, influence, fulfilment of needs, and emotional connection. A resident may feel safer and more willing to participate when they believe they belong and their contribution matters.</p>
+            <h4>PAR and person-environment fit</h4><p>Participatory action research turns community members into co-researchers who identify a concern, gather evidence, act, and reflect together. Kelly's person-environment fit approach asks whether a setting provides a good niche for a person's abilities, needs, and identity. Sometimes changing the environment is more humane than asking the person to adapt endlessly.</p>
+            <div class="remember"><strong>Simple application:</strong> For exam anxiety, map the student's relationships, school rules, neighbourhood resources, cultural expectations, and wider economic pressures before choosing an intervention.</div>
+          </div></article>
+
+          <article class="deep-topic"><h3>6. Psychological testing from idea to test</h3><div class="deep-topic-content">
+            <h4>What a test must do</h4><p>A psychological test translates an abstract construct, such as resilience or sense of community, into observable responses. Standardisation means that people receive comparable instructions, scoring, and conditions. Classification can be by administration (individual or group), scoring (objective or subjective), time (power or speed), content (verbal, non-verbal, or performance), and standardisation status.</p>
+            <h4>Construction process</h4><ol><li><strong>Define the objective:</strong> state exactly what construct is being measured and why.</li><li><strong>Plan content:</strong> identify dimensions and choose suitable item formats.</li><li><strong>Write a draft pool:</strong> create more items than the final test needs, using clear and culturally appropriate language.</li><li><strong>Try out the items:</strong> administer them to a relevant sample and look at difficulty and discrimination.</li><li><strong>Evaluate quality:</strong> establish reliability, validity, and suitable norms.</li><li><strong>Prepare the final form:</strong> select items, write instructions, create scoring rules, develop norms, and prepare the manual.</li></ol>
+            <h4>Reliability, validity, norms, and practicality</h4><p>Reliability asks whether scores are consistent. Validity asks whether the interpretation is accurate and useful for the intended purpose. Norms provide a comparison group, but a norm is only meaningful when the group resembles the person being assessed. A good test must also be practical, affordable, accessible, and ethically administered.</p>
+            <div class="remember"><strong>Useful distinction:</strong> Reliability is necessary for validity, but reliability alone is not validity. A measure can be consistently wrong.</div>
+          </div></article>
+
+          <article class="deep-topic"><h3>7. Community scales and ethical measurement</h3><div class="deep-topic-content">
+            <h4>What the scale families measure</h4><p>Sense-of-community scales measure belonging and connection. Empowerment and control scales measure influence, confidence, and perceived ability to affect decisions. Social-support and cohesion scales measure available help and trust between people. Participation scales measure involvement in civic or community action. Wellbeing and resilience measures examine quality of life, life satisfaction, coping, and the capacity to recover.</p>
+            <h4>Examples from the syllabus</h4><ul><li><strong>Belonging:</strong> SCI/SCI-2, BSCS, PSCS, and NSCS.</li><li><strong>Power:</strong> SPCS, PES, and Resident Empowerment Scale.</li><li><strong>Support:</strong> MSPSS, SPS, ISEL, NCI, and Collective Efficacy Scale.</li><li><strong>Participation:</strong> Citizen Participation Scale, CIQ, and CES.</li><li><strong>Wellbeing:</strong> WHOQOL-BREF, SWLS, PWI, CD-RISC, and CRS.</li></ul>
+            <h4>How to interpret responsibly</h4><p>A score is evidence, not a complete truth about a person or community. Check the scale's purpose, reliability, validity, translation, cultural fit, scoring instructions, and permission requirements. Explain privacy and obtain informed consent. Never use a community score to stigmatise a group or make a diagnosis without proper assessment.</p>
+            <div class="remember"><strong>Good practice:</strong> Pair numbers with interviews and local knowledge. Quantitative scores show patterns; community voices help explain what those patterns mean.</div>
+          </div></article>
+
+          <article class="deep-topic"><h3>8. Global perspectives and case studies</h3><div class="deep-topic-content">
+            <h4>Why context changes practice</h4><p>Community psychology cannot simply copy a programme from one country into another. Australia and New Zealand highlight Indigenous and decolonial concerns. Latin America and Sub-Saharan Africa often connect psychology with political history, anti-oppression, community organising, and social change. The same word, such as empowerment, may look different in different cultures and political settings.</p>
+            <h4>What the cases teach</h4><p>The UK Unemployment PAR Project by Fryer and Fagan (2003) shows how unemployment can damage mental health through lost income, routine, identity, and control, not just through individual thinking. The European labour-discrimination network described by García-Ramírez and colleagues (2009) shows how cross-country collaboration can make immigrant labour rights and discrimination visible.</p>
+            <div class="remember"><strong>Case-study method:</strong> identify the population, the social problem, the power structure, the community participation method, the action taken, and the evidence of change.</div>
+          </div></article>
+
+          <article class="deep-topic"><h3>9. Atmiyata in rural India</h3><div class="deep-topic-content">
+            <h4>The need</h4><p>Rural communities may face distance, cost, stigma, shortages of specialists, and limited information about mental health. A hospital-only system can leave people without early support. Atmiyata responds by building care into the community and connecting it to formal services.</p>
+            <h4>How task-shifting works</h4><p>Champions and Mitras are trained community volunteers. They are not replacements for psychiatrists or psychologists. They help recognise common mental health concerns, provide basic counselling and psychoeducation, encourage help-seeking, and refer people when needs are more serious. Training, supervision, clear boundaries, and referral pathways protect quality.</p>
+            <h4>Why the model is community psychology</h4><p>Atmiyata combines prevention, early identification, empowerment, local trust, digital awareness tools, and cooperation between primary care, secondary care, and social support. Its strength is not technology alone; it is the relationship between accessible tools and people who are already part of the community.</p>
+            <div class="remember"><strong>Final takeaway:</strong> Atmiyata demonstrates how a mental health system can share responsibility across professionals, trained local volunteers, families, primary care, and community networks.</div>
+          </div></article>
+        </section>
+
+        <section class="extended-notes" id="classroom-notes">
+          <div class="extended-notes-intro"><div class="eyebrow">Extended classroom notes</div><h2>Move from individual problems to shared solutions.</h2><p>These notes slow down the main ideas and show how a community psychologist thinks, plans, works with people, and decides whether an intervention has helped.</p></div>
+
+          <article class="extended-block"><h3>How to think ecologically</h3><div class="extended-content">
+            <h4>The person is part of a pattern</h4><p>An ecological approach does not deny biology, personality, or personal responsibility. It adds the surrounding conditions. A young person experiencing anxiety may be affected by sleep, family expectations, peer relationships, school rules, digital media, transport, neighbourhood safety, and wider economic pressure at the same time.</p>
+            <h4>Mapping the systems</h4><ol><li><strong>Microsystem:</strong> direct relationships such as family, friends, teachers, and co-workers.</li><li><strong>Organisation:</strong> the rules and culture of a school, workplace, clinic, or local service.</li><li><strong>Locality:</strong> the neighbourhood's safety, resources, transport, housing, and social networks.</li><li><strong>Macrosystem:</strong> laws, social attitudes, economic inequality, history, culture, and policy.</li></ol>
+            <p>The systems also interact. A school policy can change family stress; a new transport route can improve access to care; a national policy can change what a local clinic can offer. This is why one intervention rarely explains every outcome.</p>
+            <div class="community-box"><strong>Study example:</strong> If attendance is low, do not begin with "students are lazy." Map teaching methods, timetable, transport, safety, family duties, health, finances, and whether students feel that school welcomes them.</div>
+          </div></article>
+
+          <article class="extended-block"><h3>Prevention, promotion, and intervention</h3><div class="extended-content">
+            <h4>Prevention is not simply telling people to cope</h4><p>A prevention programme should reduce exposure to risk or increase access to protection. Teaching coping skills can help, but changing bullying policies, improving housing, making services affordable, or creating safe social spaces may prevent more harm than telling individuals to be more resilient.</p>
+            <h4>Choosing the level</h4><p>Primary prevention is universal and happens before a defined disorder appears. Secondary prevention targets early signs or groups at elevated risk. Tertiary work supports people already affected and tries to reduce disability, relapse, or further harm. These levels can work together rather than replace one another.</p>
+            <h4>Designing a useful programme</h4><ul><li>Define the problem with community members.</li><li>Identify risks, strengths, and existing resources.</li><li>Choose activities that fit language, culture, time, and access.</li><li>Train people who will deliver the work and provide supervision.</li><li>Build referral pathways for needs beyond the programme's scope.</li><li>Evaluate both outcomes and the quality of implementation.</li></ul>
+            <div class="community-box"><strong>Important:</strong> A programme can fail because the idea is weak, because it was delivered differently from the plan, or because the setting lacked resources. Evaluation should distinguish these possibilities.</div>
+          </div></article>
+
+          <article class="extended-block"><h3>Power, participation, and social justice</h3><div class="extended-content">
+            <h4>Why power belongs in a psychology course</h4><p>Power affects who gets heard, whose experience is called evidence, who receives services, and who is blamed when a programme fails. Poverty, caste, racism, gender inequality, disability exclusion, and migration status can shape mental health without appearing on an individual symptom checklist.</p>
+            <h4>Empowerment in practice</h4><p>Empowerment is more than making people feel confident. It includes access to information, skills, supportive relationships, material resources, and actual influence over decisions. A meeting where residents can speak but officials have already decided everything is participation in appearance, not empowerment in reality.</p>
+            <h4>Participatory action research</h4><p>PAR follows a cycle: community members define a concern, decide what information is needed, collect and interpret it, take action, and reflect on the results. The process values local knowledge and aims to produce useful change, not only an academic publication. Researchers still need consent, confidentiality, careful methods, and honest reporting.</p>
+            <div class="community-box"><strong>Exam distinction:</strong> Consultation asks people for opinions; participation shares parts of the process; empowerment increases their capacity and power to shape the decision itself.</div>
+          </div></article>
+
+          <article class="extended-block"><h3>Community mental health in India</h3><div class="extended-content">
+            <h4>Why local context matters</h4><p>India contains many languages, religions, communities, health traditions, economic realities, and patterns of family life. A programme designed elsewhere may use unfamiliar concepts, ignore local forms of support, or assume access to transport and private time. Community psychology therefore asks residents what distress means to them, where they seek help, and which solutions feel trustworthy.</p>
+            <h4>Reading the milestones together</h4><p>The Bhore Committee's focus on prevention and education, Vidya Sagar's family involvement, Durganand Sinha's work on village change, and the later work of CPAI all point toward a broader model of care. The professional is not removed from the community; care is linked with public health, family life, development, education, and social participation.</p>
+            <h4>Family involvement without family burden</h4><p>Families can provide emotional support, practical help, and knowledge of the person's daily life. But family participation must be voluntary and respectful. It should not excuse the state from providing trained services, financial support, privacy, or protection from harmful family dynamics.</p>
+          </div></article>
+
+          <article class="extended-block"><h3>Measurement and evaluation in communities</h3><div class="extended-content">
+            <h4>What should be measured?</h4><p>A project may measure symptoms, wellbeing, sense of community, social support, participation, empowerment, service use, or quality of life. It should also examine reach: who joined, who was left out, and whether the people with the greatest barriers could access it.</p>
+            <h4>Numbers and stories belong together</h4><p>Scales such as the SCI, SPCS, MSPSS, WHOQOL-BREF, CD-RISC, and community resilience measures can show patterns across a group. Interviews, focus groups, observation, and community meetings help explain those patterns. A lower participation score could mean apathy, but it could also mean meetings were held at work hours or in an unsafe location.</p>
+            <h4>Outcome, process, and unintended effects</h4><p>Outcome evaluation asks whether the desired change occurred. Process evaluation asks whether the programme reached people and was delivered as intended. Responsible evaluators also look for unintended effects, such as stigma, exclusion of non-digital residents, volunteer burnout, or unequal access to benefits.</p>
+            <div class="community-box"><strong>Evaluation question:</strong> Do not ask only "Did the average score improve?" Ask "For whom did it improve, under what conditions, and what changed in everyday life?"</div>
+          </div></article>
+
+          <article class="extended-block"><h3>Understanding Atmiyata as a complete model</h3><div class="extended-content">
+            <h4>More than volunteer counselling</h4><p>Atmiyata demonstrates a connected system. Community Champions and Mitras can notice concerns and provide basic support; primary care can respond to common needs; secondary services can handle more complex or severe difficulties; families and social networks can support recovery. Digital awareness tools can reduce information gaps, but they do not replace trust or professional referral.</p>
+            <h4>Why task-shifting needs safeguards</h4><p>Training local people increases reach, but volunteers need clear role boundaries, supervision, confidentiality guidance, referral procedures, and support for their own wellbeing. They should not be expected to diagnose severe conditions or manage emergencies without professional help.</p>
+            <h4>What students should learn from the case</h4><p>Atmiyata brings together prevention, accessibility, cultural fit, empowerment, collaboration, task-sharing, technology, and evaluation. Its deeper lesson is that community mental health is a network of relationships and services, not a single intervention delivered by one expert.</p>
+          </div></article>
+        </section>
+
+        <div class="guide-footer"><div class="eyebrow">Study prompt</div><p>When reading any community mental health problem, ask four questions: Who is affected? What social conditions shape the problem? Who has the power to change those conditions? How can the people most affected participate in the solution?</p></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
